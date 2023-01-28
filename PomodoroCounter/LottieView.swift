@@ -10,10 +10,19 @@ import Lottie
 
 enum AnimationType: String {
     case emptyTask = "empty_task"
+    case confetti = "confetti"
 }
 
 struct LottieView: UIViewRepresentable {
     let animationType: AnimationType
+    let loopMode: LottieLoopMode
+    @Binding var isShowingAnimation: Bool
+
+    init(animationType: AnimationType, loopMode: LottieLoopMode, isShowingAnimation: Binding<Bool> = .constant(true)) {
+        self.animationType = animationType
+        self.loopMode = loopMode
+        _isShowingAnimation = isShowingAnimation
+    }
 
     func makeUIView(context: Context) -> UIView {
         let view = LottieAnimationView(name: animationType.rawValue)
@@ -26,8 +35,12 @@ struct LottieView: UIViewRepresentable {
             view.heightAnchor.constraint(equalTo: parentView.heightAnchor)
         ])
 
-        view.play()
-        view.loopMode = .loop
+        view.play { finished in
+            if finished {
+                isShowingAnimation = false
+            }
+        }
+        view.loopMode = loopMode
 
         return parentView
     }

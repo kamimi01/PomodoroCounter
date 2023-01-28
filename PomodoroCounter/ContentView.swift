@@ -18,7 +18,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 ZStack {
                     if viewModel.taskList.isEmpty {
-                        LottieView(animationType: .emptyTask)
+                        LottieView(animationType: .emptyTask, loopMode: .loop)
                             .frame(width: 300, height: 400)
                     } else {
                         ScrollView {

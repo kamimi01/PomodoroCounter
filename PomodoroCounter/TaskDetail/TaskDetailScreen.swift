@@ -20,6 +20,7 @@ struct TaskDetailScreen: View {
     @FocusState private var isFocusedDetail: Bool
     @FocusState private var isFocusedNum: Bool
     @State private var numOfInterruption = 0
+    @State var isShowingAnimation = true
     var columns: [GridItem] = Array(repeating: .init(.fixed(60)), count: 5)
 
     init(viewModel: TaskListViewModel, task: TaskModel) {
@@ -149,6 +150,10 @@ struct TaskDetailScreen: View {
                     Spacer()
                 }
                 .padding(.horizontal, 16)
+            }
+            if numOfTotalPomodoro == numOfCompletedPomodoro {
+                LottieView(animationType: .confetti, loopMode: .playOnce, isShowingAnimation: $isShowingAnimation)
+                    .visibility(hidden: !isShowingAnimation)  // アニメーションを終了したら非表示にする（一度表示し終わると2度目は表示されない）
             }
         }
         .navigationTitle("TODO")
