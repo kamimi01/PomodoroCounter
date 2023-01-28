@@ -20,5 +20,133 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "214BEB1F-6A18-4E4B-B12C-E248E9E43711"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PomodoroCounter/RealmHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "updateTask(id:title:detail:totalNumOfPomodoro:completedNumOfPomodoro:numOfInterruption:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "214BEB1F-6A18-4E4B-B12C-E248E9E43711 - 609f14b443fff089"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PomodoroCounter.RealmHelper.updateTask(id: Swift.String, title: Swift.Optional&lt;Swift.String&gt;, detail: Swift.Optional&lt;Swift.String&gt;, totalNumOfPomodoro: Swift.Optional&lt;Swift.Int&gt;, completedNumOfPomodoro: Swift.Optional&lt;Swift.Int&gt;, numOfInterruption: Swift.Optional&lt;Swift.Int&gt;) -&gt; Swift.Bool"
+                  moduleName = "PomodoroCounter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/PomodoroCounter/PomodoroCounter/RealmHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "372">
+               </Location>
+               <Location
+                  uuid = "214BEB1F-6A18-4E4B-B12C-E248E9E43711 - 625f9b5ff802e4d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RealmSwift.Query&lt;PomodoroCounter.Task&gt;) -&gt; RealmSwift.Query&lt;Swift.Bool&gt; in PomodoroCounter.RealmHelper.updateTask(id: Swift.String, title: Swift.Optional&lt;Swift.String&gt;, detail: Swift.Optional&lt;Swift.String&gt;, totalNumOfPomodoro: Swift.Optional&lt;Swift.Int&gt;, completedNumOfPomodoro: Swift.Optional&lt;Swift.Int&gt;, numOfInterruption: Swift.Optional&lt;Swift.Int&gt;) -&gt; Swift.Bool"
+                  moduleName = "PomodoroCounter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/PomodoroCounter/PomodoroCounter/RealmHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47D79587-EB7F-4479-9164-6520AB451F4A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PomodoroCounter/TaskListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "updateTask(id:title:detail:totalNumOfPomodoro:completedNumOfPomodoro:numOfInterruption:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DADE048C-3F91-47C4-B713-B5A39DEE71F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PomodoroCounter/RealmHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "updateTask(id:title:detail:totalNumOfPomodoro:completedNumOfPomodoro:numOfInterruption:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "877C49D7-6D4B-4ED3-93F9-EE7DF5A6A7A8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PomodoroCounter/RealmHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "updateTask(id:title:detail:totalNumOfPomodoro:completedNumOfPomodoro:numOfInterruption:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "877C49D7-6D4B-4ED3-93F9-EE7DF5A6A7A8 - fb881a691eb66af2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in PomodoroCounter.RealmHelper.updateTask(id: Swift.String, title: Swift.Optional&lt;Swift.String&gt;, detail: Swift.Optional&lt;Swift.String&gt;, totalNumOfPomodoro: Swift.Optional&lt;Swift.Int&gt;, completedNumOfPomodoro: Swift.Optional&lt;Swift.Int&gt;, numOfInterruption: Swift.Optional&lt;Swift.Int&gt;) -&gt; Swift.Bool"
+                  moduleName = "PomodoroCounter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/PomodoroCounter/PomodoroCounter/RealmHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "877C49D7-6D4B-4ED3-93F9-EE7DF5A6A7A8 - fb881a691eb66af2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in PomodoroCounter.RealmHelper.updateTask(id: Swift.String, title: Swift.Optional&lt;Swift.String&gt;, detail: Swift.Optional&lt;Swift.String&gt;, totalNumOfPomodoro: Swift.Optional&lt;Swift.Int&gt;, completedNumOfPomodoro: Swift.Optional&lt;Swift.Int&gt;, numOfInterruption: Swift.Optional&lt;Swift.Int&gt;) -&gt; Swift.Bool"
+                  moduleName = "PomodoroCounter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/PomodoroCounter/PomodoroCounter/RealmHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

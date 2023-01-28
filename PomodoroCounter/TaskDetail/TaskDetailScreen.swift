@@ -22,6 +22,7 @@ struct TaskDetailScreen: View {
     @State private var numOfInterruption = 0
     @State var isShowingAnimation = true
     @State var isShowingConfirmAlert = false
+    @Environment(\.presentationMode) var presentation
     var columns: [GridItem] = Array(repeating: .init(.fixed(60)), count: 5)
 
     init(viewModel: TaskListViewModel, task: TaskModel) {
@@ -223,6 +224,17 @@ private extension TaskDetailScreen {
     var updateButton: some View {
         Button(action: {
             // TODO: 更新
+            let result = viewModel.updateTask(
+                id: task.id,
+                title: todoTitle,
+                detail: todoDetail,
+                totalNumOfPomodoro: numOfTotalPomodoro,
+                completedNumOfPomodoro: numOfCompletedPomodoro,
+                numOfInterruption: numOfInterruption
+            )
+            if result {
+                self.presentation.wrappedValue.dismiss()
+            }
         }) {
             Text("完了")
                 .foregroundColor(.mainText)

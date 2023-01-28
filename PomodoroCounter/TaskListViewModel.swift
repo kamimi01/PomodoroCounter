@@ -33,4 +33,22 @@ class TaskListViewModel: ObservableObject {
             }
         }
     }
+
+    func updateTask(
+        id: String,
+        title: String? = nil,
+        detail: String? = nil,
+        totalNumOfPomodoro: Int? = nil,
+        completedNumOfPomodoro: Int? = nil,
+        numOfInterruption: Int? = nil
+    ) -> Bool {
+        return realmHelper.updateTask(
+            id: id,
+            title: title,
+            detail: detail,
+            totalNumOfPomodoro: totalNumOfPomodoro,
+            completedNumOfPomodoro: completedNumOfPomodoro,
+            numOfInterruption: numOfInterruption
+        )
+    }
 }
