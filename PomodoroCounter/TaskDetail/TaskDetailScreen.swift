@@ -12,7 +12,8 @@ struct TaskDetailScreen: View {
     let task: TaskModel
 
     @State private var todoTitle = ""
-    @FocusState private var isFocused: Bool
+    @FocusState private var isFocusedTitle: Bool
+    @FocusState private var isFocusedDetail: Bool
 
     @State private var numOfTotalPomodoro = 0
     @State private var numOfInterruption = 0
@@ -33,9 +34,9 @@ struct TaskDetailScreen: View {
                             .frame(height : 50.0, alignment: .top)
                             .background(Color.white)
                             .cornerRadius(20)
-                            .focused($isFocused)
+                            .focused($isFocusedTitle)
                             .onTapGesture {
-                                isFocused = true
+                                isFocusedTitle = true
                             }
                     }
 
@@ -48,9 +49,9 @@ struct TaskDetailScreen: View {
                             .frame(height : 110.0, alignment: .top)
                             .background(Color.white)
                             .cornerRadius(20)
-                            .focused($isFocused)
+                            .focused($isFocusedDetail)
                             .onTapGesture {
-                                isFocused = true
+                                isFocusedDetail = true
                             }
                     }
                     VStack(alignment: .leading, spacing: 20) {
