@@ -16,10 +16,11 @@ struct ContentView: View {
             ZStack {
                 Color.mainBackground
                     .edgesIgnoringSafeArea(.all)
-                if viewModel.taskList.isEmpty {
-                    LottieView(animationType: .emptyTask)
-                } else {
-                    ZStack {
+                ZStack {
+                    if viewModel.taskList.isEmpty {
+                        LottieView(animationType: .emptyTask)
+                            .frame(width: 300, height: 400)
+                    } else {
                         ScrollView {
                             LazyVStack(spacing: 15) {
                                 ForEach(viewModel.taskList, id: \.self) { task in
@@ -32,9 +33,9 @@ struct ContentView: View {
                                     .frame(height: 185)
                             }
                         }
-                        addButton
-                            .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 270)
                     }
+                    addButton
+                        .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 270)
                 }
             }
             .navigationTitle("今日のTODOリスト")
