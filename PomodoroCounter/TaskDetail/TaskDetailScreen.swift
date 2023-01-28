@@ -14,6 +14,9 @@ struct TaskDetailScreen: View {
     @State private var todoTitle = ""
     @FocusState private var isFocused: Bool
 
+    @State private var numOfTotalPomodoro = 0
+    var columns: [GridItem] = Array(repeating: .init(.fixed(50)), count: 5)
+
     var body: some View {
         ZStack {
             Color.mainBackground
@@ -59,6 +62,27 @@ struct TaskDetailScreen: View {
                             deleteButton
                             Spacer()
                         }
+
+                            ZStack {
+                                VStack {
+                                    LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
+                                        ForEach((1...10), id: \.self) { num in
+                                            completedPlaceHolerButton
+                                        }
+                                    }
+                                    Spacer()
+                                }
+                                if numOfTotalPomodoro != 0 {
+                                    VStack {
+                                        LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
+                                            ForEach((1...numOfTotalPomodoro), id: \.self) { num in
+                                                completedButton
+                                            }
+                                        }
+                                        Spacer()
+                                    }
+                                }
+                            }
                     }
                     Spacer()
                 }
@@ -69,7 +93,9 @@ struct TaskDetailScreen: View {
 
 private extension TaskDetailScreen {
     var addButton: some View {
-        Button(action: {}) {
+        Button(action: {
+            numOfTotalPomodoro += 1
+        }) {
             Image(systemName: "plus")
                 .resizable()
                 .scaledToFit()
@@ -82,7 +108,11 @@ private extension TaskDetailScreen {
     }
 
     var deleteButton: some View {
-        Button(action: {}) {
+        Button(action: {
+            if numOfTotalPomodoro != 0 {
+                numOfTotalPomodoro -= 1
+            }
+        }) {
             Image(systemName: "minus")
                 .resizable()
                 .scaledToFit()
@@ -92,6 +122,24 @@ private extension TaskDetailScreen {
         }
         .background(Color.mainText)
         .cornerRadius(50)
+    }
+
+    var completedButton: some View {
+        Button(action: {}) {
+            Image(systemName: "checkmark.square")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.mainText)
+                .frame(width: 60, height: 60)
+        }
+    }
+
+    var completedPlaceHolerButton: some View {
+        Image(systemName: "checkmark.square")
+            .resizable()
+            .scaledToFit()
+            .foregroundColor(.placeholder)
+            .frame(width: 60, height: 60)
     }
 }
 
