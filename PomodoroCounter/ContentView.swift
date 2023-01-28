@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel = TaskListViewModel()
     @State private var isShowingAddTaskScreen = false
-    let text = "- [] 今日のタスク1\n- [] 今日のタスク2"
 
     var body: some View {
         NavigationView {
@@ -74,10 +73,22 @@ private extension ContentView {
     }
 
     var shareButton: some View {
-        ShareLink(item: URL(string: "https://developer.apple.com/xcode/swiftui/")!) {
+        ShareLink(item: createDailyReport()) {
             Image(systemName: "square.and.arrow.up")
                 .foregroundColor(.mainText)
         }
+    }
+
+    func createDailyReport() -> String {
+        var sharedText = ""
+        for todo in viewModel.taskList {
+            let totalPomodoroDuration = todo.totalNumOfPomodoro * 30
+            let completedPomodoroDuration = todo.completedNumOfPomodoro * 30
+            sharedText += """
+            - [\(completedPomodoroDuration)分(\(todo.completedNumOfPomodoro))/\(totalPomodoroDuration)分(\(todo.totalNumOfPomodoro))] \(todo.title)(\(todo.detail))\n
+            """
+        }
+        return sharedText
     }
 
     var resetButton: some View {
