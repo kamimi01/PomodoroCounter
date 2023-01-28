@@ -11,8 +11,87 @@ struct TaskDetailScreen: View {
     @ObservedObject var viewModel: TaskListViewModel
     let task: TaskModel
 
+    @State private var todoTitle = ""
+    @FocusState private var isFocused: Bool
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.mainBackground
+                .edgesIgnoringSafeArea(.all)
+            ScrollView {
+                VStack(spacing: 20) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("タイトル")
+                            .foregroundColor(.mainText)
+                            .padding(.horizontal, 5)
+                        TextField("ABC会社の資料作成", text: $todoTitle, axis: .vertical)
+                            .padding()
+                            .frame(height : 50.0, alignment: .top)
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .focused($isFocused)
+                            .onTapGesture {
+                                isFocused = true
+                            }
+                    }
+
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("詳細")
+                            .foregroundColor(.mainText)
+                            .padding(.horizontal, 5)
+                        TextField("お客様が求めているものは何かを明確にする", text: $todoTitle, axis: .vertical)
+                            .padding()
+                            .frame(height : 110.0, alignment: .top)
+                            .background(Color.white)
+                            .cornerRadius(20)
+                            .focused($isFocused)
+                            .onTapGesture {
+                                isFocused = true
+                            }
+                    }
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("ポモドーロ合計")
+                            .foregroundColor(.mainText)
+                            .padding(.horizontal, 5)
+                        HStack(spacing: 30) {
+                            Spacer()
+                            addButton
+                            deleteButton
+                            Spacer()
+                        }
+                    }
+                    Spacer()
+                }
+            }
+        }
+    }
+}
+
+private extension TaskDetailScreen {
+    var addButton: some View {
+        Button(action: {}) {
+            Image(systemName: "plus")
+                .resizable()
+                .scaledToFit()
+                .padding()
+                .foregroundColor(.white)
+                .frame(width: 70, height: 70)
+        }
+        .background(Color.mainText)
+        .cornerRadius(50)
+    }
+
+    var deleteButton: some View {
+        Button(action: {}) {
+            Image(systemName: "minus")
+                .resizable()
+                .scaledToFit()
+                .padding()
+                .foregroundColor(.white)
+                .frame(width: 70, height: 70)
+        }
+        .background(Color.mainText)
+        .cornerRadius(50)
     }
 }
 
