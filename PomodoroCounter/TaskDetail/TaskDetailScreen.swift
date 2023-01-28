@@ -106,12 +106,11 @@ struct TaskDetailScreen: View {
                             VStack {
                                 LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
                                     ForEach((1...numOfTotalPomodoro), id: \.self) { num in
-                                        CompletedPomoButton( numOfCompletedPomodoro: $numOfCompletedPomodoro)
+                                        CompletedPomoButton(number: num, numOfCompletedPomodoro: $numOfCompletedPomodoro)
                                     }
                                 }
                                 Spacer()
                             }
-
                         }
                     }
 
@@ -206,7 +205,18 @@ private extension TaskDetailScreen {
 
     struct CompletedPomoButton: View {
         @State private var isTapped = false
+        let number: Int
         @Binding var numOfCompletedPomodoro: Int
+
+        init(number: Int, numOfCompletedPomodoro: Binding<Int>) {
+            self.number = number
+            _numOfCompletedPomodoro = numOfCompletedPomodoro
+            if number <= numOfCompletedPomodoro.wrappedValue {
+                _isTapped = State(initialValue: true)
+            } else {
+                _isTapped = State(initialValue: false)
+            }
+        }
 
         var body: some View {
             Button(action: {
