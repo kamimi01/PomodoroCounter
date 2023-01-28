@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel = TaskListViewModel()
     @State private var isShowingAddTaskScreen = false
+    let text = "- [] 今日のタスク1\n- [] 今日のタスク2"
 
     var body: some View {
         NavigationView {
@@ -73,7 +74,7 @@ private extension ContentView {
     }
 
     var shareButton: some View {
-        Button(action: {}) {
+        ShareLink(item: URL(string: "https://developer.apple.com/xcode/swiftui/")!) {
             Image(systemName: "square.and.arrow.up")
                 .foregroundColor(.mainText)
         }
