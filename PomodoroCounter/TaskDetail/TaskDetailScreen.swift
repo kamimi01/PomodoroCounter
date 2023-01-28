@@ -12,10 +12,13 @@ struct TaskDetailScreen: View {
     let task: TaskModel
 
     @State private var todoTitle = ""
+    @State private var todoDetail = ""
+    @State private var numOfTotalPomodoroString = ""
+    @State private var numOfTotalPomodoro = 0
     @FocusState private var isFocusedTitle: Bool
     @FocusState private var isFocusedDetail: Bool
+    @FocusState private var isFocusedNum: Bool
 
-    @State private var numOfTotalPomodoro = 0
     @State private var numOfInterruption = 0
     var columns: [GridItem] = Array(repeating: .init(.fixed(60)), count: 5)
 
@@ -44,7 +47,7 @@ struct TaskDetailScreen: View {
                         Text("詳細")
                             .foregroundColor(.mainText)
                             .padding(.horizontal, 5)
-                        TextField("お客様が求めているものは何かを明確にする", text: $todoTitle, axis: .vertical)
+                        TextField("お客様が求めているものは何かを明確にする", text: $todoDetail, axis: .vertical)
                             .padding()
                             .frame(height : 110.0, alignment: .top)
                             .background(Color.white)
@@ -55,35 +58,46 @@ struct TaskDetailScreen: View {
                             }
                     }
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("必要なポモドーロ数")
-                            .foregroundColor(.mainText)
-                            .padding(.horizontal, 5)
-                        HStack(spacing: 30) {
-                            Spacer()
-                            addPomoButton
-                            deletePomoButton
-                            Spacer()
+                        VStack(alignment: .leading) {
+                            Text("必要なポモドーロ数")
+                                .foregroundColor(.mainText)
+                                .padding(.horizontal, 5)
+                            HStack(spacing: 20) {
+                                TextField("10", text: $numOfTotalPomodoroString, axis: .vertical)
+                                    .keyboardType(.numberPad)
+                                    .padding()
+                                    .frame(width: 60, height : 60, alignment: .center)
+                                    .background(Color.white)
+                                    .cornerRadius(20)
+                                    .focused($isFocusedNum)
+                                    .onTapGesture {
+                                        isFocusedNum = true
+                                    }
+                                Button(action: {
+                                    numOfTotalPomodoro = Int(numOfTotalPomodoroString) ?? 0
+                                }) {
+                                    Text("数を確定する")
+                                        .fontWeight(.semibold)
+                                        .frame(width: 160, height: 60)
+                                        .foregroundColor(.white)
+                                        .background(Color.mainText)
+                                        .cornerRadius(24)
+                                }
+                                Spacer()
+                            }
                         }
+                        .frame(maxWidth: .infinity)
 
-                        ZStack {
+                        if numOfTotalPomodoro != 0 {
                             VStack {
                                 LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
-                                    ForEach((1...10), id: \.self) { num in
-                                        completedPlaceHoler
+                                    ForEach((1...numOfTotalPomodoro), id: \.self) { num in
+                                        CompletedPomoButton()
                                     }
                                 }
                                 Spacer()
                             }
-                            if numOfTotalPomodoro != 0 {
-                                VStack {
-                                    LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
-                                        ForEach((1...numOfTotalPomodoro), id: \.self) { num in
-                                            CompletedPomoButton()
-                                        }
-                                    }
-                                    Spacer()
-                                }
-                            }
+
                         }
                     }
 
