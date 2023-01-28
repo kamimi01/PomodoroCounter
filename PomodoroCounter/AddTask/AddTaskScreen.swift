@@ -10,10 +10,10 @@ import SwiftUI
 struct AddTaskScreen: View {
     @ObservedObject var viewModel = AddTaskViewModel()
 
-    @State private var todoTitle = ""
-    @State private var todoDetail = ""
-    @State private var numOfTotalPomodoroString = ""
-    @State private var numOfTotalPomodoro = 0
+//    @State private var todoTitle = ""
+//    @State private var todoDetail = ""
+//    @State private var numOfTotalPomodoroString = ""
+//    @State private var numOfTotalPomodoro = 0
     @FocusState private var isFocusedTitle: Bool
     @FocusState private var isFocusedDetail: Bool
     @FocusState private var isFocusedNum: Bool
@@ -31,7 +31,7 @@ struct AddTaskScreen: View {
                             Text("タイトル")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
-                            TextField("ABC会社の資料作成", text: $todoTitle, axis: .vertical)
+                            TextField("ABC会社の資料作成", text: $viewModel.todoTitle, axis: .vertical)
                                 .padding()
                                 .frame(height : 50.0, alignment: .top)
                                 .background(Color.white)
@@ -45,7 +45,7 @@ struct AddTaskScreen: View {
                             Text("詳細")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
-                            TextField("お客様が求めているものは何かを明確にする", text: $todoDetail, axis: .vertical)
+                            TextField("お客様が求めているものは何かを明確にする", text: $viewModel.todoDetail, axis: .vertical)
                                 .padding()
                                 .frame(height : 110.0, alignment: .top)
                                 .background(Color.white)
@@ -61,7 +61,7 @@ struct AddTaskScreen: View {
                                     .foregroundColor(.mainText)
                                     .padding(.horizontal, 5)
                                 HStack(spacing: 20) {
-                                    TextField("10", text: $numOfTotalPomodoroString, axis: .vertical)
+                                    TextField("10", text: $viewModel.numOfTotalPomodoroString, axis: .vertical)
                                         .keyboardType(.numberPad)
                                         .padding()
                                         .frame(width: 60, height : 60, alignment: .center)
@@ -106,10 +106,10 @@ private extension AddTaskScreen {
 
     var addButton: some View {
         Button(action: {
-//            let result = addFriend()
-//            if result {
-//                dismiss()
-//            }
+            let result = viewModel.addTask()
+            if result {
+                dismiss()
+            }
         }) {
             Text("追加")
                 .foregroundColor(.mainText)
