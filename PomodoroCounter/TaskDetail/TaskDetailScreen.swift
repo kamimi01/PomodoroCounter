@@ -19,9 +19,20 @@ struct TaskDetailScreen: View {
     @FocusState private var isFocusedTitle: Bool
     @FocusState private var isFocusedDetail: Bool
     @FocusState private var isFocusedNum: Bool
-
     @State private var numOfInterruption = 0
     var columns: [GridItem] = Array(repeating: .init(.fixed(60)), count: 5)
+
+    init(viewModel: TaskListViewModel, task: TaskModel) {
+        self.viewModel = viewModel
+        self.task = task
+
+        _todoTitle = State(initialValue: self.task.title)
+        _todoDetail = State(initialValue: self.task.detail)
+        _numOfTotalPomodoroString = State(initialValue: String(self.task.totalNumOfPomodoro))
+        _numOfTotalPomodoro = State(initialValue: self.task.totalNumOfPomodoro)
+        _numOfCompletedPomodoro = State(initialValue: self.task.completedNumOfPomodoro)
+        _numOfInterruption = State(initialValue: self.task.numOfInterruption)
+    }
 
     var body: some View {
         ZStack {
