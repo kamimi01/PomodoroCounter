@@ -120,8 +120,11 @@ struct TaskDetailScreen: View {
                     }
                     Spacer()
                 }
+                .padding(.horizontal, 16)
             }
         }
+        .navigationTitle("TODO")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
