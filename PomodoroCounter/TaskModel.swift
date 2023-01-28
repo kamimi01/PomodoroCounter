@@ -9,7 +9,7 @@ import Foundation
 
 struct TaskModel: Hashable {
     let id: String
-    let date: Date
+    let createdDate: Date
     let title: String
     let detail: String
     let totalNumOfPomodoro: Int

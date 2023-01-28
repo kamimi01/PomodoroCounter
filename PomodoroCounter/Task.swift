@@ -10,7 +10,7 @@ import RealmSwift
 
 class Task: Object, Identifiable {
     @objc dynamic var id = UUID().uuidString
-    @objc dynamic var date = Date()
+    @objc dynamic var createdDate = Date()
     @objc dynamic var title = ""
     @objc dynamic var detail = ""
     @objc dynamic var totalNumOfPomodoro = 0
