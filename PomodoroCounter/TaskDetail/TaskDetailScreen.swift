@@ -78,7 +78,7 @@ struct TaskDetailScreen: View {
                                 TextField("10", text: $numOfTotalPomodoroString, axis: .vertical)
                                     .keyboardType(.numberPad)
                                     .padding()
-                                    .frame(width: 60, height : 60, alignment: .center)
+                                    .frame(width: 100, height : 60, alignment: .center)
                                     .background(Color.white)
                                     .cornerRadius(20)
                                     .focused($isFocusedNum)
