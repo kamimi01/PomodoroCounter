@@ -15,6 +15,7 @@ struct TaskDetailScreen: View {
     @State private var todoDetail = ""
     @State private var numOfTotalPomodoroString = ""
     @State private var numOfTotalPomodoro = 0
+    @State private var numOfCompletedPomodoro = 0
     @FocusState private var isFocusedTitle: Bool
     @FocusState private var isFocusedDetail: Bool
     @FocusState private var isFocusedNum: Bool
@@ -59,7 +60,7 @@ struct TaskDetailScreen: View {
                     }
                     VStack(alignment: .leading, spacing: 20) {
                         VStack(alignment: .leading) {
-                            Text("必要なポモドーロ数")
+                            Text("必要なポモドーロ数" + "(\(numOfCompletedPomodoro)")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
                             HStack(spacing: 20) {
@@ -75,6 +76,8 @@ struct TaskDetailScreen: View {
                                     }
                                 Button(action: {
                                     numOfTotalPomodoro = Int(numOfTotalPomodoroString) ?? 0
+                                    // 完了ポモドーロ数をリセットする
+                                    numOfCompletedPomodoro = 0
                                 }) {
                                     Text("数を確定する")
                                         .fontWeight(.semibold)
@@ -92,7 +95,7 @@ struct TaskDetailScreen: View {
                             VStack {
                                 LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
                                     ForEach((1...numOfTotalPomodoro), id: \.self) { num in
-                                        CompletedPomoButton()
+                                        CompletedPomoButton(numOfCompletedPomodoro: $numOfCompletedPomodoro)
                                     }
                                 }
                                 Spacer()
@@ -178,10 +181,16 @@ private extension TaskDetailScreen {
 
     struct CompletedPomoButton: View {
         @State private var isTapped = false
+        @Binding var numOfCompletedPomodoro: Int
 
         var body: some View {
             Button(action: {
                 isTapped.toggle()
+                if isTapped {
+                    numOfCompletedPomodoro += 1
+                } else {
+                    numOfCompletedPomodoro -= 1
+                }
             }) {
                 if isTapped {
                     Image(systemName: "checkmark.square.fill")
