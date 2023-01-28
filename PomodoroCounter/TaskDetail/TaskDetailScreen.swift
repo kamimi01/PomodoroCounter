@@ -21,6 +21,7 @@ struct TaskDetailScreen: View {
     @FocusState private var isFocusedNum: Bool
     @State private var numOfInterruption = 0
     @State var isShowingAnimation = true
+    @State var isShowingConfirmAlert = false
     var columns: [GridItem] = Array(repeating: .init(.fixed(60)), count: 5)
 
     init(viewModel: TaskListViewModel, task: TaskModel) {
@@ -87,6 +88,12 @@ struct TaskDetailScreen: View {
                                         isFocusedNum = true
                                     }
                                 Button(action: {
+                                    // 完了ポモドーロがある場合は、アラート画面でリセットの処理をする
+                                    if numOfCompletedPomodoro > 0 {
+                                        isShowingConfirmAlert = true
+                                        return
+                                    }
+
                                     numOfTotalPomodoro = Int(numOfTotalPomodoroString) ?? 0
                                     // 完了ポモドーロ数をリセットする
                                     numOfCompletedPomodoro = 0
@@ -97,6 +104,20 @@ struct TaskDetailScreen: View {
                                         .foregroundColor(.white)
                                         .background(Color.mainText)
                                         .cornerRadius(24)
+                                }
+                                .alert("確認", isPresented: $isShowingConfirmAlert) {
+                                    Button(action: {}) {
+                                        Text("キャンセル")
+                                    }
+                                    Button(action: {
+                                        numOfTotalPomodoro = Int(numOfTotalPomodoroString) ?? 0
+                                        // 完了ポモドーロ数をリセットする
+                                        numOfCompletedPomodoro = 0
+                                    }) {
+                                        Text("確定する")
+                                    }
+                                } message: {
+                                    Text("この数で確定するとポモドーロの完了数がリセットされます。よろしいですか？")
                                 }
                                 Spacer()
                             }
