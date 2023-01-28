@@ -105,7 +105,7 @@ struct TaskDetailScreen: View {
                     }
 
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("中断した回数")
+                        Text("中断した回数" + "(\(numOfInterruption))")
                             .foregroundColor(.mainText)
                             .padding(.horizontal, 5)
                         HStack(spacing: 30) {
