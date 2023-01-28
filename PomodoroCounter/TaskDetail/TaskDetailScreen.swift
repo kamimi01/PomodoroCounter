@@ -154,6 +154,11 @@ struct TaskDetailScreen: View {
         }
         .navigationTitle("TODO")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing){
+                updateButton
+            }
+        }
     }
 }
 
@@ -188,6 +193,15 @@ private extension TaskDetailScreen {
         }
         .background(Color.mainText)
         .cornerRadius(50)
+    }
+
+    var updateButton: some View {
+        Button(action: {
+            // TODO: 更新
+        }) {
+            Text("完了")
+                .foregroundColor(.mainText)
+        }
     }
 
     struct CompletedPomoButton: View {

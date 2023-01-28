@@ -39,6 +39,7 @@ struct ContentView: View {
             }
             .navigationTitle("今日のTODOリスト")
         }
+        .accentColor(.mainText)
     }
 }
 
