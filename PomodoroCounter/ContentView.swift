@@ -39,6 +39,15 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("今日のTODOリスト")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing){
+                    shareButton
+                }
+                ToolbarItem(placement: .navigationBarLeading){
+                    resetButton
+                }
+            }
         }
         .accentColor(.mainText)
     }
@@ -60,6 +69,20 @@ private extension ContentView {
         }
         .fullScreenCover(isPresented: $isShowingAddTaskScreen) {
             AddTaskScreen()
+        }
+    }
+
+    var shareButton: some View {
+        Button(action: {}) {
+            Image(systemName: "square.and.arrow.up")
+                .foregroundColor(.mainText)
+        }
+    }
+
+    var resetButton: some View {
+        Button(action: {}) {
+            Image(systemName: "trash")
+                .foregroundColor(.mainText)
         }
     }
 }
