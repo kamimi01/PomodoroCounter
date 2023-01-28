@@ -60,7 +60,7 @@ struct TaskDetailScreen: View {
                     }
                     VStack(alignment: .leading, spacing: 20) {
                         VStack(alignment: .leading) {
-                            Text("必要なポモドーロ数" + "(\(numOfCompletedPomodoro)")
+                            Text("必要なポモドーロ数" + "(\(numOfCompletedPomodoro)/\(numOfTotalPomodoro))")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
                             HStack(spacing: 20) {
@@ -79,7 +79,7 @@ struct TaskDetailScreen: View {
                                     // 完了ポモドーロ数をリセットする
                                     numOfCompletedPomodoro = 0
                                 }) {
-                                    Text("数を確定する")
+                                    Text("この数で確定する")
                                         .fontWeight(.semibold)
                                         .frame(width: 160, height: 60)
                                         .foregroundColor(.white)
@@ -95,7 +95,7 @@ struct TaskDetailScreen: View {
                             VStack {
                                 LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
                                     ForEach((1...numOfTotalPomodoro), id: \.self) { num in
-                                        CompletedPomoButton(numOfCompletedPomodoro: $numOfCompletedPomodoro)
+                                        CompletedPomoButton( numOfCompletedPomodoro: $numOfCompletedPomodoro)
                                     }
                                 }
                                 Spacer()
@@ -204,6 +204,12 @@ private extension TaskDetailScreen {
                         .scaledToFit()
                         .foregroundColor(.mainText)
                         .frame(width: 60, height: 60)
+                }
+            }
+            // 完了ポモドーロ数が0になったら、タップしているかどうかの変数をfalseにリセットする
+            .onChange(of: numOfCompletedPomodoro) { value in
+                if value == 0 {
+                    isTapped = false
                 }
             }
         }
