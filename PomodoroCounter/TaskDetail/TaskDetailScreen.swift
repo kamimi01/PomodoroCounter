@@ -78,7 +78,7 @@ struct TaskDetailScreen: View {
                                 VStack {
                                     LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
                                         ForEach((1...numOfTotalPomodoro), id: \.self) { num in
-                                            completedButton
+                                            CompletedPomoButton()
                                         }
                                     }
                                     Spacer()
@@ -162,13 +162,27 @@ private extension TaskDetailScreen {
         .cornerRadius(50)
     }
 
-    var completedButton: some View {
-        Button(action: {}) {
-            Image(systemName: "checkmark.square")
-                .resizable()
-                .scaledToFit()
-                .foregroundColor(.mainText)
-                .frame(width: 60, height: 60)
+    struct CompletedPomoButton: View {
+        @State private var isTapped = false
+
+        var body: some View {
+            Button(action: {
+                isTapped.toggle()
+            }) {
+                if isTapped {
+                    Image(systemName: "checkmark.square.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.green)
+                        .frame(width: 60, height: 60)
+                } else {
+                    Image(systemName: "checkmark.square")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.mainText)
+                        .frame(width: 60, height: 60)
+                }
+            }
         }
     }
 
