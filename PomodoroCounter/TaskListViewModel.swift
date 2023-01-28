@@ -14,10 +14,13 @@ class TaskListViewModel: ObservableObject {
         TaskModel(id: "2", date: Date(), title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 20, completedNumOfPomodoro: 4, numOfInterruption: 2),
         TaskModel(id: "3", date: Date(), title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 10, completedNumOfPomodoro: 4, numOfInterruption: 2)
     ]
+    private let realmHelper: RealmHelper
     private var token: NotificationToken?
     private var allTasks: Results<Task>? = nil
 
     init() {
+        realmHelper = RealmHelper.shared
+        allTasks = realmHelper.loadTasks()
         token = allTasks?.observe { [weak self] _ in
             print("observe呼ばれた")
             guard let self = self,

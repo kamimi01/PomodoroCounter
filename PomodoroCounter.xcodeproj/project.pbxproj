@@ -30,6 +30,7 @@
 		D4CEE7F52985E0DC005B863F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE7F42985E0DC005B863F /* Realm */; };
 		D4CEE7F72985E0DC005B863F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE7F62985E0DC005B863F /* RealmSwift */; };
 		D4CEE7F92985E173005B863F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7F82985E172005B863F /* Task.swift */; };
+		D4CEE7FB2985E38B005B863F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7FA2985E38B005B863F /* RealmHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		D4CEE7EE2985DA4D005B863F /* VisibilityStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityStyle.swift; sourceTree = "<group>"; };
 		D4CEE7F02985DA6F005B863F /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		D4CEE7F82985E172005B863F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D4CEE7FA2985E38B005B863F /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				D4CEE7AD29849E96005B863F /* ContentView.swift */,
 				D4CEE7E42984FDEB005B863F /* TaskCardView.swift */,
 				D4CEE7D72984FAD6005B863F /* TaskListViewModel.swift */,
+				D4CEE7FA2985E38B005B863F /* RealmHelper.swift */,
 				D4CEE7F82985E172005B863F /* Task.swift */,
 				D4CEE7D92984FB1E005B863F /* TaskModel.swift */,
 				D4CEE7D52984FA78005B863F /* Color+Extension.swift */,
@@ -340,6 +343,7 @@
 				D4CEE7F92985E173005B863F /* Task.swift in Sources */,
 				D4CEE7E52984FDEB005B863F /* TaskCardView.swift in Sources */,
 				D4CEE7AC29849E96005B863F /* PomodoroCounterApp.swift in Sources */,
+				D4CEE7FB2985E38B005B863F /* RealmHelper.swift in Sources */,
 				D4CEE7F12985DA6F005B863F /* View+Extension.swift in Sources */,
 				D4CEE7E12984FD55005B863F /* LottieView.swift in Sources */,
 			);
