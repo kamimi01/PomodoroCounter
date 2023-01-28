@@ -77,6 +77,6 @@ private extension TaskCardView {
 
 struct TaskCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskCardView(task: TaskModel(id: "1", title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 20, completedNumOfPomodoro: 12, numOfInterruption: 2))
+        TaskCardView(task: TaskModel(id: "1", date: Date(), title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 20, completedNumOfPomodoro: 12, numOfInterruption: 2))
     }
 }

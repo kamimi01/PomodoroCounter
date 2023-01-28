@@ -335,6 +335,6 @@ private extension TaskDetailScreen {
 
 struct TaskDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        TaskDetailScreen(viewModel: TaskListViewModel(), task: TaskModel(id: "1", title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 10, completedNumOfPomodoro: 4, numOfInterruption: 2))
+        TaskDetailScreen(viewModel: TaskListViewModel(), task: TaskModel(id: "1", date: Date(), title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 10, completedNumOfPomodoro: 4, numOfInterruption: 2))
     }
 }

@@ -27,6 +27,9 @@
 		D4CEE7ED29856BCC005B863F /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = D4CEE7EC29856BCB005B863F /* confetti.json */; };
 		D4CEE7EF2985DA4D005B863F /* VisibilityStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7EE2985DA4D005B863F /* VisibilityStyle.swift */; };
 		D4CEE7F12985DA6F005B863F /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7F02985DA6F005B863F /* View+Extension.swift */; };
+		D4CEE7F52985E0DC005B863F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE7F42985E0DC005B863F /* Realm */; };
+		D4CEE7F72985E0DC005B863F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE7F62985E0DC005B863F /* RealmSwift */; };
+		D4CEE7F92985E173005B863F /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7F82985E172005B863F /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,7 @@
 		D4CEE7EC29856BCB005B863F /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		D4CEE7EE2985DA4D005B863F /* VisibilityStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityStyle.swift; sourceTree = "<group>"; };
 		D4CEE7F02985DA6F005B863F /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		D4CEE7F82985E172005B863F /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4CEE7F72985E0DC005B863F /* RealmSwift in Frameworks */,
+				D4CEE7F52985E0DC005B863F /* Realm in Frameworks */,
 				D4CEE7DD2984FD19005B863F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,6 +132,7 @@
 				D4CEE7AD29849E96005B863F /* ContentView.swift */,
 				D4CEE7E42984FDEB005B863F /* TaskCardView.swift */,
 				D4CEE7D72984FAD6005B863F /* TaskListViewModel.swift */,
+				D4CEE7F82985E172005B863F /* Task.swift */,
 				D4CEE7D92984FB1E005B863F /* TaskModel.swift */,
 				D4CEE7D52984FA78005B863F /* Color+Extension.swift */,
 				D4CEE7AF29849E99005B863F /* Assets.xcassets */,
@@ -199,6 +206,8 @@
 			name = PomodoroCounter;
 			packageProductDependencies = (
 				D4CEE7DC2984FD19005B863F /* Lottie */,
+				D4CEE7F42985E0DC005B863F /* Realm */,
+				D4CEE7F62985E0DC005B863F /* RealmSwift */,
 			);
 			productName = PomodoroCounter;
 			productReference = D4CEE7A829849E96005B863F /* PomodoroCounter.app */;
@@ -274,6 +283,7 @@
 			mainGroup = D4CEE79F29849E96005B863F;
 			packageReferences = (
 				D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				D4CEE7F32985E0DC005B863F /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = D4CEE7A929849E96005B863F /* Products */;
 			projectDirPath = "";
@@ -327,6 +337,7 @@
 				D4CEE7E829850BAD005B863F /* AddTaskScreen.swift in Sources */,
 				D4CEE7DA2984FB1E005B863F /* TaskModel.swift in Sources */,
 				D4CEE7D62984FA78005B863F /* Color+Extension.swift in Sources */,
+				D4CEE7F92985E173005B863F /* Task.swift in Sources */,
 				D4CEE7E52984FDEB005B863F /* TaskCardView.swift in Sources */,
 				D4CEE7AC29849E96005B863F /* PomodoroCounterApp.swift in Sources */,
 				D4CEE7F12985DA6F005B863F /* View+Extension.swift in Sources */,
@@ -667,6 +678,14 @@
 				version = 4.1.2;
 			};
 		};
+		D4CEE7F32985E0DC005B863F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 10.34.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -674,6 +693,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		D4CEE7F42985E0DC005B863F /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CEE7F32985E0DC005B863F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		D4CEE7F62985E0DC005B863F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CEE7F32985E0DC005B863F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
