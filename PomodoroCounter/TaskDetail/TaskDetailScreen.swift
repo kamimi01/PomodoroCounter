@@ -169,6 +169,7 @@ struct TaskDetailScreen: View {
                             }
                         }
                     }
+                    deleteButton
                     Spacer()
                 }
                 .padding(.horizontal, 16)
@@ -223,7 +224,6 @@ private extension TaskDetailScreen {
 
     var updateButton: some View {
         Button(action: {
-            // TODO: 更新
             let result = viewModel.updateTask(
                 id: task.id,
                 title: todoTitle,
@@ -342,6 +342,21 @@ private extension TaskDetailScreen {
             .scaledToFit()
             .foregroundColor(.placeholder)
             .frame(width: 50, height: 50)
+    }
+
+    var deleteButton: some View {
+        Button(action: {
+            let result = viewModel.deleteTask(id: task.id)
+            if result {
+                self.presentation.wrappedValue.dismiss()
+            }
+        }) {
+            Text("リストから削除")
+                .foregroundColor(.mainText)
+                .font(.title3)
+                .bold()
+        }
+        .frame(height: 60)
     }
 }
 

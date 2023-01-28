@@ -51,4 +51,8 @@ class TaskListViewModel: ObservableObject {
             numOfInterruption: numOfInterruption
         )
     }
+
+    func deleteTask(id: String) -> Bool {
+        return realmHelper.deleteTask(id: id)
+    }
 }

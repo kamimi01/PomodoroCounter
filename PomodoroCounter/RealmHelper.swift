@@ -79,4 +79,23 @@ class RealmHelper {
             fatalError("更新対象データが見つかりませんでした")
         }
     }
+
+    func deleteTask(id: String) -> Bool {
+        let willDeleteTasks = realm.objects(Task.self).where {
+            $0.id == id
+        }
+        if let willDeleteTask = willDeleteTasks.first {
+            do {
+                try realm.write {
+                    realm.delete(willDeleteTask)
+                }
+                return true
+            } catch {
+                print("削除に失敗しました")
+                return false
+            }
+        } else {
+            fatalError("削除対象が見つかりませんでした")
+        }
+    }
 }
