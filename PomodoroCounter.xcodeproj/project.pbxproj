@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4CEE7AC29849E96005B863F /* PomodoroCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7AB29849E96005B863F /* PomodoroCounterApp.swift */; };
+		D4CEE7AE29849E96005B863F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7AD29849E96005B863F /* ContentView.swift */; };
+		D4CEE7B029849E99005B863F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4CEE7AF29849E99005B863F /* Assets.xcassets */; };
+		D4CEE7B329849E99005B863F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4CEE7B229849E99005B863F /* Preview Assets.xcassets */; };
+		D4CEE7BD29849E9A005B863F /* PomodoroCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7BC29849E9A005B863F /* PomodoroCounterTests.swift */; };
+		D4CEE7C729849E9A005B863F /* PomodoroCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7C629849E9A005B863F /* PomodoroCounterUITests.swift */; };
+		D4CEE7C929849E9A005B863F /* PomodoroCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7C829849E9A005B863F /* PomodoroCounterUITestsLaunchTests.swift */; };
+		D4CEE7D62984FA78005B863F /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7D52984FA78005B863F /* Color+Extension.swift */; };
+		D4CEE7D82984FAD6005B863F /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7D72984FAD6005B863F /* TaskListViewModel.swift */; };
+		D4CEE7DA2984FB1E005B863F /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7D92984FB1E005B863F /* TaskModel.swift */; };
+		D4CEE7DD2984FD19005B863F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE7DC2984FD19005B863F /* Lottie */; };
+		D4CEE7DF2984FD3A005B863F /* empty_task.json in Resources */ = {isa = PBXBuildFile; fileRef = D4CEE7DE2984FD3A005B863F /* empty_task.json */; };
+		D4CEE7E12984FD55005B863F /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7E02984FD55005B863F /* LottieView.swift */; };
+		D4CEE7E32984FDE2005B863F /* TaskDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7E22984FDE2005B863F /* TaskDetailScreen.swift */; };
+		D4CEE7E52984FDEB005B863F /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7E42984FDEB005B863F /* TaskCardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4CEE7B929849E9A005B863F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4CEE7A029849E96005B863F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4CEE7A729849E96005B863F;
+			remoteInfo = PomodoroCounter;
+		};
+		D4CEE7C329849E9A005B863F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4CEE7A029849E96005B863F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4CEE7A729849E96005B863F;
+			remoteInfo = PomodoroCounter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4CEE7A829849E96005B863F /* PomodoroCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4CEE7AB29849E96005B863F /* PomodoroCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroCounterApp.swift; sourceTree = "<group>"; };
+		D4CEE7AD29849E96005B863F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D4CEE7AF29849E99005B863F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4CEE7B229849E99005B863F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D4CEE7B829849E9A005B863F /* PomodoroCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4CEE7BC29849E9A005B863F /* PomodoroCounterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroCounterTests.swift; sourceTree = "<group>"; };
+		D4CEE7C229849E9A005B863F /* PomodoroCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomodoroCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4CEE7C629849E9A005B863F /* PomodoroCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroCounterUITests.swift; sourceTree = "<group>"; };
+		D4CEE7C829849E9A005B863F /* PomodoroCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4CEE7D52984FA78005B863F /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		D4CEE7D72984FAD6005B863F /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		D4CEE7D92984FB1E005B863F /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		D4CEE7DE2984FD3A005B863F /* empty_task.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_task.json; sourceTree = "<group>"; };
+		D4CEE7E02984FD55005B863F /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		D4CEE7E22984FDE2005B863F /* TaskDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailScreen.swift; sourceTree = "<group>"; };
+		D4CEE7E42984FDEB005B863F /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4CEE7A529849E96005B863F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CEE7DD2984FD19005B863F /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CEE7B529849E9A005B863F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CEE7BF29849E9A005B863F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4CEE79F29849E96005B863F = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7AA29849E96005B863F /* PomodoroCounter */,
+				D4CEE7BB29849E9A005B863F /* PomodoroCounterTests */,
+				D4CEE7C529849E9A005B863F /* PomodoroCounterUITests */,
+				D4CEE7A929849E96005B863F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4CEE7A929849E96005B863F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7A829849E96005B863F /* PomodoroCounter.app */,
+				D4CEE7B829849E9A005B863F /* PomodoroCounterTests.xctest */,
+				D4CEE7C229849E9A005B863F /* PomodoroCounterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4CEE7AA29849E96005B863F /* PomodoroCounter */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7E62984FDF2005B863F /* TaskDetail */,
+				D4CEE7AB29849E96005B863F /* PomodoroCounterApp.swift */,
+				D4CEE7AD29849E96005B863F /* ContentView.swift */,
+				D4CEE7E42984FDEB005B863F /* TaskCardView.swift */,
+				D4CEE7D72984FAD6005B863F /* TaskListViewModel.swift */,
+				D4CEE7D92984FB1E005B863F /* TaskModel.swift */,
+				D4CEE7D52984FA78005B863F /* Color+Extension.swift */,
+				D4CEE7AF29849E99005B863F /* Assets.xcassets */,
+				D4CEE7DE2984FD3A005B863F /* empty_task.json */,
+				D4CEE7B129849E99005B863F /* Preview Content */,
+				D4CEE7E02984FD55005B863F /* LottieView.swift */,
+			);
+			path = PomodoroCounter;
+			sourceTree = "<group>";
+		};
+		D4CEE7B129849E99005B863F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7B229849E99005B863F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D4CEE7BB29849E9A005B863F /* PomodoroCounterTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7BC29849E9A005B863F /* PomodoroCounterTests.swift */,
+			);
+			path = PomodoroCounterTests;
+			sourceTree = "<group>";
+		};
+		D4CEE7C529849E9A005B863F /* PomodoroCounterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7C629849E9A005B863F /* PomodoroCounterUITests.swift */,
+				D4CEE7C829849E9A005B863F /* PomodoroCounterUITestsLaunchTests.swift */,
+			);
+			path = PomodoroCounterUITests;
+			sourceTree = "<group>";
+		};
+		D4CEE7E62984FDF2005B863F /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7E22984FDE2005B863F /* TaskDetailScreen.swift */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4CEE7A729849E96005B863F /* PomodoroCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4CEE7CC29849E9A005B863F /* Build configuration list for PBXNativeTarget "PomodoroCounter" */;
+			buildPhases = (
+				D4CEE7A429849E96005B863F /* Sources */,
+				D4CEE7A529849E96005B863F /* Frameworks */,
+				D4CEE7A629849E96005B863F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PomodoroCounter;
+			packageProductDependencies = (
+				D4CEE7DC2984FD19005B863F /* Lottie */,
+			);
+			productName = PomodoroCounter;
+			productReference = D4CEE7A829849E96005B863F /* PomodoroCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4CEE7B729849E9A005B863F /* PomodoroCounterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4CEE7CF29849E9A005B863F /* Build configuration list for PBXNativeTarget "PomodoroCounterTests" */;
+			buildPhases = (
+				D4CEE7B429849E9A005B863F /* Sources */,
+				D4CEE7B529849E9A005B863F /* Frameworks */,
+				D4CEE7B629849E9A005B863F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4CEE7BA29849E9A005B863F /* PBXTargetDependency */,
+			);
+			name = PomodoroCounterTests;
+			productName = PomodoroCounterTests;
+			productReference = D4CEE7B829849E9A005B863F /* PomodoroCounterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D4CEE7C129849E9A005B863F /* PomodoroCounterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4CEE7D229849E9A005B863F /* Build configuration list for PBXNativeTarget "PomodoroCounterUITests" */;
+			buildPhases = (
+				D4CEE7BE29849E9A005B863F /* Sources */,
+				D4CEE7BF29849E9A005B863F /* Frameworks */,
+				D4CEE7C029849E9A005B863F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4CEE7C429849E9A005B863F /* PBXTargetDependency */,
+			);
+			name = PomodoroCounterUITests;
+			productName = PomodoroCounterUITests;
+			productReference = D4CEE7C229849E9A005B863F /* PomodoroCounterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4CEE7A029849E96005B863F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					D4CEE7A729849E96005B863F = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					D4CEE7B729849E9A005B863F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D4CEE7A729849E96005B863F;
+					};
+					D4CEE7C129849E9A005B863F = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = D4CEE7A729849E96005B863F;
+					};
+				};
+			};
+			buildConfigurationList = D4CEE7A329849E96005B863F /* Build configuration list for PBXProject "PomodoroCounter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4CEE79F29849E96005B863F;
+			packageReferences = (
+				D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
+			productRefGroup = D4CEE7A929849E96005B863F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4CEE7A729849E96005B863F /* PomodoroCounter */,
+				D4CEE7B729849E9A005B863F /* PomodoroCounterTests */,
+				D4CEE7C129849E9A005B863F /* PomodoroCounterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4CEE7A629849E96005B863F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CEE7B329849E99005B863F /* Preview Assets.xcassets in Resources */,
+				D4CEE7B029849E99005B863F /* Assets.xcassets in Resources */,
+				D4CEE7DF2984FD3A005B863F /* empty_task.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CEE7B629849E9A005B863F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CEE7C029849E9A005B863F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4CEE7A429849E96005B863F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CEE7D82984FAD6005B863F /* TaskListViewModel.swift in Sources */,
+				D4CEE7E32984FDE2005B863F /* TaskDetailScreen.swift in Sources */,
+				D4CEE7AE29849E96005B863F /* ContentView.swift in Sources */,
+				D4CEE7DA2984FB1E005B863F /* TaskModel.swift in Sources */,
+				D4CEE7D62984FA78005B863F /* Color+Extension.swift in Sources */,
+				D4CEE7E52984FDEB005B863F /* TaskCardView.swift in Sources */,
+				D4CEE7AC29849E96005B863F /* PomodoroCounterApp.swift in Sources */,
+				D4CEE7E12984FD55005B863F /* LottieView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CEE7B429849E9A005B863F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CEE7BD29849E9A005B863F /* PomodoroCounterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CEE7BE29849E9A005B863F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CEE7C929849E9A005B863F /* PomodoroCounterUITestsLaunchTests.swift in Sources */,
+				D4CEE7C729849E9A005B863F /* PomodoroCounterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4CEE7BA29849E9A005B863F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4CEE7A729849E96005B863F /* PomodoroCounter */;
+			targetProxy = D4CEE7B929849E9A005B863F /* PBXContainerItemProxy */;
+		};
+		D4CEE7C429849E9A005B863F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4CEE7A729849E96005B863F /* PomodoroCounter */;
+			targetProxy = D4CEE7C329849E9A005B863F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D4CEE7CA29849E9A005B863F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D4CEE7CB29849E9A005B863F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4CEE7CD29849E9A005B863F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PomodoroCounter/Preview Content\"";
+				DEVELOPMENT_TEAM = 95L82PNXV3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.PomodoroCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D4CEE7CE29849E9A005B863F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PomodoroCounter/Preview Content\"";
+				DEVELOPMENT_TEAM = 95L82PNXV3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.PomodoroCounter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D4CEE7D029849E9A005B863F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95L82PNXV3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.PomodoroCounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PomodoroCounter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PomodoroCounter";
+			};
+			name = Debug;
+		};
+		D4CEE7D129849E9A005B863F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95L82PNXV3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.PomodoroCounterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PomodoroCounter.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PomodoroCounter";
+			};
+			name = Release;
+		};
+		D4CEE7D329849E9A005B863F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95L82PNXV3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.PomodoroCounterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PomodoroCounter;
+			};
+			name = Debug;
+		};
+		D4CEE7D429849E9A005B863F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 95L82PNXV3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.PomodoroCounterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PomodoroCounter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4CEE7A329849E96005B863F /* Build configuration list for PBXProject "PomodoroCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CEE7CA29849E9A005B863F /* Debug */,
+				D4CEE7CB29849E9A005B863F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4CEE7CC29849E9A005B863F /* Build configuration list for PBXNativeTarget "PomodoroCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CEE7CD29849E9A005B863F /* Debug */,
+				D4CEE7CE29849E9A005B863F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4CEE7CF29849E9A005B863F /* Build configuration list for PBXNativeTarget "PomodoroCounterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CEE7D029849E9A005B863F /* Debug */,
+				D4CEE7D129849E9A005B863F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4CEE7D229849E9A005B863F /* Build configuration list for PBXNativeTarget "PomodoroCounterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CEE7D329849E9A005B863F /* Debug */,
+				D4CEE7D429849E9A005B863F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4CEE7DC2984FD19005B863F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D4CEE7A029849E96005B863F /* Project object */;
+}
