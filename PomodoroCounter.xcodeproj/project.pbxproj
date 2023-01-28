@@ -23,6 +23,7 @@
 		D4CEE7E32984FDE2005B863F /* TaskDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7E22984FDE2005B863F /* TaskDetailScreen.swift */; };
 		D4CEE7E52984FDEB005B863F /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7E42984FDEB005B863F /* TaskCardView.swift */; };
 		D4CEE7E829850BAD005B863F /* AddTaskScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7E729850BAD005B863F /* AddTaskScreen.swift */; };
+		D4CEE7EB29852F5B005B863F /* AddTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7EA29852F5B005B863F /* AddTaskViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D4CEE7E22984FDE2005B863F /* TaskDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailScreen.swift; sourceTree = "<group>"; };
 		D4CEE7E42984FDEB005B863F /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
 		D4CEE7E729850BAD005B863F /* AddTaskScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskScreen.swift; sourceTree = "<group>"; };
+		D4CEE7EA29852F5B005B863F /* AddTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +114,10 @@
 		D4CEE7AA29849E96005B863F /* PomodoroCounter */ = {
 			isa = PBXGroup;
 			children = (
+				D4CEE7E929852F32005B863F /* AddTask */,
 				D4CEE7E62984FDF2005B863F /* TaskDetail */,
 				D4CEE7AB29849E96005B863F /* PomodoroCounterApp.swift */,
 				D4CEE7AD29849E96005B863F /* ContentView.swift */,
-				D4CEE7E729850BAD005B863F /* AddTaskScreen.swift */,
 				D4CEE7E42984FDEB005B863F /* TaskCardView.swift */,
 				D4CEE7D72984FAD6005B863F /* TaskListViewModel.swift */,
 				D4CEE7D92984FB1E005B863F /* TaskModel.swift */,
@@ -159,6 +161,15 @@
 				D4CEE7E22984FDE2005B863F /* TaskDetailScreen.swift */,
 			);
 			path = TaskDetail;
+			sourceTree = "<group>";
+		};
+		D4CEE7E929852F32005B863F /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7E729850BAD005B863F /* AddTaskScreen.swift */,
+				D4CEE7EA29852F5B005B863F /* AddTaskViewModel.swift */,
+			);
+			path = AddTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +312,7 @@
 				D4CEE7D82984FAD6005B863F /* TaskListViewModel.swift in Sources */,
 				D4CEE7E32984FDE2005B863F /* TaskDetailScreen.swift in Sources */,
 				D4CEE7AE29849E96005B863F /* ContentView.swift in Sources */,
+				D4CEE7EB29852F5B005B863F /* AddTaskViewModel.swift in Sources */,
 				D4CEE7E829850BAD005B863F /* AddTaskScreen.swift in Sources */,
 				D4CEE7DA2984FB1E005B863F /* TaskModel.swift in Sources */,
 				D4CEE7D62984FA78005B863F /* Color+Extension.swift in Sources */,
