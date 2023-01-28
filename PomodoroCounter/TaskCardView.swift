@@ -19,12 +19,17 @@ struct TaskCardView: View {
                         .bold()
                         .foregroundColor(.mainText)
                         .frame(width: 100)
-//                        .border(Color.red)
-                    Text("pomo")
-                        .font(.system(size: 20))
-                        .foregroundColor(.mainText)
-                        .padding(.bottom, 20)
-//                        .border(Color.red)
+                    if task.completedNumOfPomodoro <= 1 {
+                        Text("pom")
+                            .font(.system(size: 20))
+                            .foregroundColor(.mainText)
+                            .padding(.bottom, 20)
+                    } else {
+                        Text("poms")
+                            .font(.system(size: 20))
+                            .foregroundColor(.mainText)
+                            .padding(.bottom, 20)
+                    }
                 }
                 Text(task.title)
                     .font(.system(size: 25))
@@ -33,7 +38,6 @@ struct TaskCardView: View {
                     .multilineTextAlignment(.leading)
                     .frame(maxHeight: .infinity)
                     .frame(maxWidth: .infinity)
-//                    .border(Color.red)
             }
             HStack {
                 Text(totalTime(numOfPomodoro: task.completedNumOfPomodoro) + "分")
@@ -47,7 +51,7 @@ struct TaskCardView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 15, height: 15)
-                        .foregroundColor(.red)
+                        .foregroundColor(.mainText)
                     Text(String(task.numOfInterruption))
                         .font(.title2)
                         .foregroundColor(.gray)
