@@ -15,7 +15,8 @@ struct TaskDetailScreen: View {
     @FocusState private var isFocused: Bool
 
     @State private var numOfTotalPomodoro = 0
-    var columns: [GridItem] = Array(repeating: .init(.fixed(50)), count: 5)
+    @State private var numOfInterruption = 0
+    var columns: [GridItem] = Array(repeating: .init(.fixed(60)), count: 5)
 
     var body: some View {
         ZStack {
@@ -53,36 +54,69 @@ struct TaskDetailScreen: View {
                             }
                     }
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("ポモドーロ合計")
+                        Text("必要なポモドーロ数")
                             .foregroundColor(.mainText)
                             .padding(.horizontal, 5)
                         HStack(spacing: 30) {
                             Spacer()
-                            addButton
-                            deleteButton
+                            addPomoButton
+                            deletePomoButton
                             Spacer()
                         }
 
-                            ZStack {
+                        ZStack {
+                            VStack {
+                                LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
+                                    ForEach((1...10), id: \.self) { num in
+                                        completedPlaceHoler
+                                    }
+                                }
+                                Spacer()
+                            }
+                            if numOfTotalPomodoro != 0 {
                                 VStack {
                                     LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
-                                        ForEach((1...10), id: \.self) { num in
-                                            completedPlaceHolerButton
+                                        ForEach((1...numOfTotalPomodoro), id: \.self) { num in
+                                            completedButton
                                         }
                                     }
                                     Spacer()
                                 }
-                                if numOfTotalPomodoro != 0 {
-                                    VStack {
-                                        LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
-                                            ForEach((1...numOfTotalPomodoro), id: \.self) { num in
-                                                completedButton
-                                            }
-                                        }
-                                        Spacer()
+                            }
+                        }
+                    }
+
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("中断した回数")
+                            .foregroundColor(.mainText)
+                            .padding(.horizontal, 5)
+                        HStack(spacing: 30) {
+                            Spacer()
+                            addInterruptionButton
+                            deleteInterruptionButton
+                            Spacer()
+                        }
+
+                        ZStack {
+                            VStack {
+                                LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
+                                    ForEach((1...5), id: \.self) { num in
+                                        interruptionPlaceHoler
                                     }
                                 }
+                                Spacer()
                             }
+                            if numOfInterruption != 0 {
+                                VStack {
+                                    LazyVGrid(columns: columns, alignment: .center, spacing: 8) {
+                                        ForEach((1...numOfInterruption), id: \.self) { num in
+                                            interruptionHappen
+                                        }
+                                    }
+                                    Spacer()
+                                }
+                            }
+                        }
                     }
                     Spacer()
                 }
@@ -92,7 +126,7 @@ struct TaskDetailScreen: View {
 }
 
 private extension TaskDetailScreen {
-    var addButton: some View {
+    var addPomoButton: some View {
         Button(action: {
             numOfTotalPomodoro += 1
         }) {
@@ -107,7 +141,7 @@ private extension TaskDetailScreen {
         .cornerRadius(50)
     }
 
-    var deleteButton: some View {
+    var deletePomoButton: some View {
         Button(action: {
             if numOfTotalPomodoro != 0 {
                 numOfTotalPomodoro -= 1
@@ -134,12 +168,60 @@ private extension TaskDetailScreen {
         }
     }
 
-    var completedPlaceHolerButton: some View {
+    var completedPlaceHoler: some View {
         Image(systemName: "checkmark.square")
             .resizable()
             .scaledToFit()
             .foregroundColor(.placeholder)
             .frame(width: 60, height: 60)
+    }
+
+    var addInterruptionButton: some View {
+        Button(action: {
+            numOfInterruption += 1
+        }) {
+            Image(systemName: "plus")
+                .resizable()
+                .scaledToFit()
+                .padding()
+                .foregroundColor(.white)
+                .frame(width: 70, height: 70)
+        }
+        .background(Color.mainText)
+        .cornerRadius(50)
+    }
+
+    var deleteInterruptionButton: some View {
+        Button(action: {
+            if numOfInterruption != 0 {
+                numOfInterruption -= 1
+            }
+        }) {
+            Image(systemName: "minus")
+                .resizable()
+                .scaledToFit()
+                .padding()
+                .foregroundColor(.white)
+                .frame(width: 70, height: 70)
+        }
+        .background(Color.mainText)
+        .cornerRadius(50)
+    }
+
+    var interruptionHappen: some View {
+        Image(systemName: "multiply")
+            .resizable()
+            .scaledToFit()
+            .foregroundColor(.mainText)
+            .frame(width: 50, height: 50)
+    }
+
+    var interruptionPlaceHoler: some View {
+        Image(systemName: "multiply")
+            .resizable()
+            .scaledToFit()
+            .foregroundColor(.placeholder)
+            .frame(width: 50, height: 50)
     }
 }
 
