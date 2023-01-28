@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel = TaskListViewModel()
     @State private var isShowingAddTaskScreen = false
+    @State private var isShowingResetAlert = false
 
     var body: some View {
         NavigationView {
@@ -92,9 +93,21 @@ private extension ContentView {
     }
 
     var resetButton: some View {
-        Button(action: {}) {
+        Button(action: {
+            isShowingResetAlert = true
+        }) {
             Image(systemName: "trash")
                 .foregroundColor(.mainText)
+        }
+        .alert("確認", isPresented: $isShowingResetAlert) {
+            Button(action: {}) {
+                Text("キャンセル")
+            }
+            Button(action: {}) {
+                Text("削除")
+            }
+        } message: {
+            Text("今日のTODOリストを全て削除します。よろしいですか？")
         }
     }
 }
