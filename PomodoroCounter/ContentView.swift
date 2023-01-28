@@ -52,7 +52,7 @@ private extension ContentView {
                 .font(.title)
                 .frame(width: 90, height: 90)
                 .imageScale(.large)
-                .background(Color.red)
+                .background(Color.green)
                 .foregroundColor(.white)
                 .clipShape(Circle())
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
