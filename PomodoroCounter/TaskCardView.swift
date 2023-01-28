@@ -12,24 +12,28 @@ struct TaskCardView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 20) {
-                HStack(alignment: .bottom, spacing: 10) {
+            HStack(spacing: 10) {
+                HStack(alignment: .bottom, spacing: 0) {
                     Text(String(task.completedNumOfPomodoro))
                         .font(.system(size: 90))
                         .bold()
                         .foregroundColor(.mainText)
+                        .frame(width: 100)
+//                        .border(Color.red)
                     Text("pomo")
-                        .font(.title2)
+                        .font(.system(size: 20))
                         .foregroundColor(.mainText)
                         .padding(.bottom, 20)
+//                        .border(Color.red)
                 }
                 Text(task.title)
-                    .font(.title)
+                    .font(.system(size: 25))
                     .foregroundColor(.mainText)
-                    .lineLimit(2)
+                    .lineLimit(3)
                     .multilineTextAlignment(.leading)
                     .frame(maxHeight: .infinity)
                     .frame(maxWidth: .infinity)
+//                    .border(Color.red)
             }
             HStack {
                 Text(totalTime(numOfPomodoro: task.completedNumOfPomodoro) + "分")
@@ -69,6 +73,6 @@ private extension TaskCardView {
 
 struct TaskCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskCardView(task: TaskModel(id: "1", title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 10, completedNumOfPomodoro: 4, numOfInterruption: 2))
+        TaskCardView(task: TaskModel(id: "1", title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 20, completedNumOfPomodoro: 12, numOfInterruption: 2))
     }
 }
