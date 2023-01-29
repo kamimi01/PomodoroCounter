@@ -22,7 +22,9 @@ struct TaskDetailScreen: View {
     @State private var numOfInterruption = 0
     @State var isShowingAnimation = true
     @State var isShowingConfirmAlert = false
+    @State var isShowingSaveConfirmAlert = false
     @Environment(\.presentationMode) var presentation
+    @Environment(\.dismiss) var dismiss
     var columns: [GridItem] = Array(repeating: .init(.fixed(60)), count: 5)
 
     init(viewModel: TaskListViewModel, task: TaskModel) {
@@ -181,15 +183,44 @@ struct TaskDetailScreen: View {
         }
         .navigationTitle("TODO")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing){
                 updateButton
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                backButton
             }
         }
     }
 }
 
 private extension TaskDetailScreen {
+    var backButton: some View {
+        Button(action: {
+            isShowingSaveConfirmAlert = true
+        }) {
+            HStack {
+                Image(systemName: "chevron.backward")
+                    .font(.system(size: 17, weight: .medium))
+                Text("戻る")
+            }
+            .foregroundColor(.mainText)
+        }
+        .alert("確認", isPresented: $isShowingSaveConfirmAlert) {
+            Button(action: {}) {
+                Text("キャンセル")
+            }
+            Button(action: {
+                dismiss()
+            }) {
+                Text("戻る")
+            }
+        } message: {
+            Text("完了ボタンは押しましたか？押さずに戻ると入力した内容が破棄されます。")
+        }
+    }
+
     var addPomoButton: some View {
         Button(action: {
             numOfTotalPomodoro += 1
