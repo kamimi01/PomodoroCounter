@@ -33,7 +33,7 @@ struct AddTaskScreen: View {
                                 .padding(.horizontal, 5)
                             TextField("ABC会社の資料作成", text: $viewModel.todoTitle, axis: .vertical)
                                 .padding()
-                                .frame(height : 50.0, alignment: .top)
+                                .frame(height : 55.0, alignment: .top)
                                 .background(Color.white)
                                 .cornerRadius(20)
                                 .focused($isFocusedTitle)
@@ -64,7 +64,7 @@ struct AddTaskScreen: View {
                                     TextField("10", text: $viewModel.numOfTotalPomodoroString, axis: .vertical)
                                         .keyboardType(.numberPad)
                                         .padding()
-                                        .frame(width: 60, height : 60, alignment: .center)
+                                        .frame(width: 100, height : 60, alignment: .center)
                                         .background(Color.white)
                                         .cornerRadius(20)
                                         .focused($isFocusedNum)
@@ -91,6 +91,7 @@ struct AddTaskScreen: View {
                 }
             }
         }
+        .accentColor(.mainText)
     }
 }
 

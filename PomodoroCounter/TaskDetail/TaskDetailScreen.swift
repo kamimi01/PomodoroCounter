@@ -49,7 +49,7 @@ struct TaskDetailScreen: View {
                             .padding(.horizontal, 5)
                         TextField("ABC会社の資料作成", text: $todoTitle, axis: .vertical)
                             .padding()
-                            .frame(height : 50.0, alignment: .top)
+                            .frame(height : 55.0, alignment: .top)
                             .background(Color.white)
                             .cornerRadius(20)
                             .focused($isFocusedTitle)
