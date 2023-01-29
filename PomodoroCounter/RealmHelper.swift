@@ -137,4 +137,17 @@ class RealmHelper {
             fatalError("削除対象が見つかりませんでした")
         }
     }
+
+    func deleteAllTasks() -> Bool {
+        let allTasks = realm.objects(Task.self)
+        do {
+            try realm.write {
+                realm.delete(allTasks)
+            }
+            return true
+        } catch {
+            print("削除に失敗しました")
+            return false
+        }
+    }
 }

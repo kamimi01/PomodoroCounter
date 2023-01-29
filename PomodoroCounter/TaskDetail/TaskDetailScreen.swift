@@ -47,7 +47,7 @@ struct TaskDetailScreen: View {
                         Text("タイトル")
                             .foregroundColor(.mainText)
                             .padding(.horizontal, 5)
-                        TextField("ABC会社の資料作成", text: $todoTitle, axis: .vertical)
+                        TextField("資格勉強の本を読む", text: $todoTitle, axis: .vertical)
                             .padding()
                             .frame(height : 55.0, alignment: .top)
                             .background(Color.white)
@@ -62,7 +62,7 @@ struct TaskDetailScreen: View {
                         Text("詳細")
                             .foregroundColor(.mainText)
                             .padding(.horizontal, 5)
-                        TextField("お客様が求めているものは何かを明確にする", text: $todoDetail, axis: .vertical)
+                        TextField("教科書の23ページまで読む", text: $todoDetail, axis: .vertical)
                             .padding()
                             .frame(height : 110.0, alignment: .top)
                             .background(Color.white)
@@ -99,7 +99,7 @@ struct TaskDetailScreen: View {
                                     // 完了ポモドーロ数をリセットする
                                     numOfCompletedPomodoro = 0
                                 }) {
-                                    Text("この数で確定する")
+                                    Text("この数に変更する")
                                         .fontWeight(.semibold)
                                         .frame(width: 160, height: 60)
                                         .foregroundColor(.white)
@@ -115,10 +115,10 @@ struct TaskDetailScreen: View {
                                         // 完了ポモドーロ数をリセットする
                                         numOfCompletedPomodoro = 0
                                     }) {
-                                        Text("確定する")
+                                        Text("変更する")
                                     }
                                 } message: {
-                                    Text("この数で確定するとポモドーロの完了数がリセットされます。よろしいですか？")
+                                    Text("変更するとポモドーロの完了数がリセットされます。よろしいですか？")
                                 }
                                 Spacer()
                             }

@@ -103,11 +103,13 @@ private extension ContentView {
             Button(action: {}) {
                 Text("キャンセル")
             }
-            Button(action: {}) {
+            Button(action: {
+                _ = viewModel.deleteAllTasks()
+            }) {
                 Text("削除")
             }
         } message: {
-            Text("今日のTODOリストを全て削除します。よろしいですか？")
+            Text("今日のTODOを全て削除します。よろしいですか？\n右上の共有ボタンからデータを出力することができます。")
         }
     }
 }

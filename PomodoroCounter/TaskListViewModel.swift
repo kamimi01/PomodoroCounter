@@ -51,4 +51,8 @@ class TaskListViewModel: ObservableObject {
     func deleteTask(id: String) -> Bool {
         return realmHelper.deleteTask(id: id)
     }
+
+    func deleteAllTasks() -> Bool {
+        return realmHelper.deleteAllTasks()
+    }
 }
