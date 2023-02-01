@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4A900F5298B1CE600BCCA5D /* CircularProgressbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A900F4298B1CE600BCCA5D /* CircularProgressbarView.swift */; };
 		D4CEE7AC29849E96005B863F /* PomodoroCounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7AB29849E96005B863F /* PomodoroCounterApp.swift */; };
 		D4CEE7AE29849E96005B863F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7AD29849E96005B863F /* ContentView.swift */; };
 		D4CEE7B029849E99005B863F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4CEE7AF29849E99005B863F /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4A900F4298B1CE600BCCA5D /* CircularProgressbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressbarView.swift; sourceTree = "<group>"; };
 		D4CEE7A829849E96005B863F /* PomodoroCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CEE7AB29849E96005B863F /* PomodoroCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroCounterApp.swift; sourceTree = "<group>"; };
 		D4CEE7AD29849E96005B863F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				D4CEE7E22984FDE2005B863F /* TaskDetailScreen.swift */,
+				D4A900F4298B1CE600BCCA5D /* CircularProgressbarView.swift */,
 			);
 			path = TaskDetail;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				D4CEE7E829850BAD005B863F /* AddTaskScreen.swift in Sources */,
 				D4CEE7DA2984FB1E005B863F /* TaskModel.swift in Sources */,
 				D4CEE7D62984FA78005B863F /* Color+Extension.swift in Sources */,
+				D4A900F5298B1CE600BCCA5D /* CircularProgressbarView.swift in Sources */,
 				D4CEE7F92985E173005B863F /* Task.swift in Sources */,
 				D4CEE7E52984FDEB005B863F /* TaskCardView.swift in Sources */,
 				D4CEE7AC29849E96005B863F /* PomodoroCounterApp.swift in Sources */,

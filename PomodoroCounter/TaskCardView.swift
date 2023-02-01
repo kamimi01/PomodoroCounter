@@ -11,7 +11,7 @@ struct TaskCardView: View {
     let task: TaskModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .center, spacing: 10) {
             HStack(spacing: 10) {
                 HStack(alignment: .bottom, spacing: 0) {
                     Text(String(task.completedNumOfPomodoro))
@@ -19,17 +19,11 @@ struct TaskCardView: View {
                         .bold()
                         .foregroundColor(.mainText)
                         .frame(width: 100)
-                    if task.completedNumOfPomodoro <= 1 {
-                        Text("pom")
-                            .font(.system(size: 20))
-                            .foregroundColor(.mainText)
-                            .padding(.bottom, 20)
-                    } else {
-                        Text("poms")
-                            .font(.system(size: 20))
-                            .foregroundColor(.mainText)
-                            .padding(.bottom, 20)
-                    }
+                    Text("/ " + String(task.totalNumOfPomodoro))
+                        .font(.system(size: 40))
+                        .foregroundColor(.gray)
+                        .frame(width: 55)
+                        .padding(.bottom, 15)
                 }
                 Text(task.title)
                     .font(.system(size: 25))
@@ -59,9 +53,10 @@ struct TaskCardView: View {
                         .font(.callout)
                         .foregroundColor(.mainText)
                 }
+                Spacer()
             }
         }
-        .padding()
+        .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .frame(height: 170)
         .background(Color.white)
