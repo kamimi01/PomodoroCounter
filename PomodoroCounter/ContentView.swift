@@ -22,16 +22,21 @@ struct ContentView: View {
                         LottieView(animationType: .emptyTask, loopMode: .loop)
                             .frame(width: 300, height: 400)
                     } else {
-                        ScrollView {
-                            LazyVStack(spacing: 15) {
-                                ForEach(viewModel.taskList, id: \.self) { task in
-                                    NavigationLink(destination: TaskDetailScreen(viewModel: viewModel, task: task)) {
-                                        TaskCardView(task: task)
-                                            .padding(.horizontal, 16)
+                        VStack {
+                            CircularProgressbarView(numOfCompletedPomodoro: numOfCompletedPomodoro, numOfTotalPomodoro: numOfTotalPomodoro)
+                                .frame(width: 110, height: 110)
+                                .padding()
+                            ScrollView {
+                                LazyVStack(spacing: 15) {
+                                    ForEach(viewModel.taskList, id: \.self) { task in
+                                        NavigationLink(destination: TaskDetailScreen(viewModel: viewModel, task: task)) {
+                                            TaskCardView(task: task)
+                                                .padding(.horizontal, 16)
+                                        }
                                     }
+                                    Color.mainBackground
+                                        .frame(height: 185)
                                 }
-                                Color.mainBackground
-                                    .frame(height: 185)
                             }
                         }
                     }
@@ -55,6 +60,22 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+    var numOfTotalPomodoro: Int {
+        var result = 0
+        for task in viewModel.taskList {
+            result += task.totalNumOfPomodoro
+        }
+        return result
+    }
+
+    var numOfCompletedPomodoro: Int {
+        var result = 0
+        for task in viewModel.taskList {
+            result += task.completedNumOfPomodoro
+        }
+        return result
+    }
+
     var addButton: some View {
         Button(action: {
             isShowingAddTaskScreen = true

@@ -10,10 +10,6 @@ import SwiftUI
 struct AddTaskScreen: View {
     @ObservedObject var viewModel = AddTaskViewModel()
 
-//    @State private var todoTitle = ""
-//    @State private var todoDetail = ""
-//    @State private var numOfTotalPomodoroString = ""
-//    @State private var numOfTotalPomodoro = 0
     @FocusState private var isFocusedTitle: Bool
     @FocusState private var isFocusedDetail: Bool
     @FocusState private var isFocusedNum: Bool
@@ -73,11 +69,11 @@ struct AddTaskScreen: View {
                                         }
                                     Spacer()
                                 }
+                                Spacer()
                             }
-                            Spacer()
                         }
+                        .padding(.horizontal, 16)
                     }
-                    .padding(.horizontal, 16)
                 }
             }
             .navigationTitle("新しいTODO")
