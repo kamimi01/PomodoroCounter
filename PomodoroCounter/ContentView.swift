@@ -41,10 +41,8 @@ struct ContentView: View {
                             }
                         }
                     }
-                    if isShowingAddButton {
-                        addButton
-                            .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 200)
-                    }
+                    addButton
+                        .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 200)
                     if isShowingCalendar {
                         Color.black
                             .opacity(0.5)
@@ -76,14 +74,14 @@ struct ContentView: View {
 
 private extension ContentView {
     // FIXME: 当日のタスク以外の追加は追加できないようにする
-    var isShowingAddButton: Bool {
-        let today = Date().convert()
-        let selectedDate = viewModel.selectedDate.convert()
-        if today == selectedDate {
-            return true
-        }
-        return false
-    }
+//    var isShowingAddButton: Bool {
+//        let today = Date().convert()
+//        let selectedDate = viewModel.selectedDate.convert()
+//        if today == selectedDate {
+//            return true
+//        }
+//        return false
+//    }
 
     var dateString: String {
         let today = Date().convert()
@@ -153,7 +151,7 @@ private extension ContentView {
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
         }
         .fullScreenCover(isPresented: $isShowingAddTaskScreen) {
-            AddTaskScreen()
+            AddTaskScreen(selectedDate: viewModel.selectedDate)
         }
     }
 

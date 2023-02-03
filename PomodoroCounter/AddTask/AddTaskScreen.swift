@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AddTaskScreen: View {
     @ObservedObject var viewModel = AddTaskViewModel()
+    let selectedDate: Date
 
     @FocusState private var isFocusedTitle: Bool
     @FocusState private var isFocusedDetail: Bool
@@ -103,7 +104,7 @@ private extension AddTaskScreen {
 
     var addButton: some View {
         Button(action: {
-            let result = viewModel.addTask()
+            let result = viewModel.addTask(selectedDate: selectedDate)
             if result {
                 dismiss()
             }
@@ -116,6 +117,6 @@ private extension AddTaskScreen {
 
 struct AddTaskScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskScreen()
+        AddTaskScreen(selectedDate: Date())
     }
 }
