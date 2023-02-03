@@ -55,7 +55,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("今日のTODO")
+            .navigationTitle(dateString)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing){
@@ -71,6 +71,15 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+    var dateString: String {
+        let today = Date().convert()
+        let selectedDate = selectedDate.convert()
+        if today == selectedDate {
+            return "今日"
+        }
+        return selectedDate
+    }
+
     var calendar: some View {
         VStack {
             HStack {
@@ -87,7 +96,7 @@ private extension ContentView {
             }
             DatePicker(
                 "",
-                selection: .constant(Date()),
+                selection: $selectedDate,
                 displayedComponents: [.date]
             )
             .datePickerStyle(.graphical)
