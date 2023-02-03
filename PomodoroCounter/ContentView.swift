@@ -12,7 +12,6 @@ struct ContentView: View {
     @State private var isShowingAddTaskScreen = false
     @State private var isShowingResetAlert = false
     @State private var isShowingCalendar = false
-    @State private var selectedDate = Date()
 
     var body: some View {
         NavigationView {
@@ -42,8 +41,10 @@ struct ContentView: View {
                             }
                         }
                     }
-                    addButton
-                        .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 200)
+                    if isShowingAddButton {
+                        addButton
+                            .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 200)
+                    }
                     if isShowingCalendar {
                         Color.black
                             .opacity(0.5)
@@ -54,6 +55,9 @@ struct ContentView: View {
                         calendar
                     }
                 }
+            }
+            .onChange(of: viewModel.selectedDate) { _ in
+                viewModel.getTaskList(on: viewModel.selectedDate)
             }
             .navigationTitle(dateString)
             .navigationBarTitleDisplayMode(.inline)
@@ -71,9 +75,19 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+    // FIXME: 当日のタスク以外の追加は追加できないようにする
+    var isShowingAddButton: Bool {
+        let today = Date().convert()
+        let selectedDate = viewModel.selectedDate.convert()
+        if today == selectedDate {
+            return true
+        }
+        return false
+    }
+
     var dateString: String {
         let today = Date().convert()
-        let selectedDate = selectedDate.convert()
+        let selectedDate = viewModel.selectedDate.convert()
         if today == selectedDate {
             return "今日"
         }
@@ -96,7 +110,7 @@ private extension ContentView {
             }
             DatePicker(
                 "",
-                selection: $selectedDate,
+                selection: $viewModel.selectedDate,
                 displayedComponents: [.date]
             )
             .datePickerStyle(.graphical)

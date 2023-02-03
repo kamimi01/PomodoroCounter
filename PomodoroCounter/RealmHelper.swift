@@ -14,6 +14,7 @@ class RealmHelper {
 
     init() {
         let key = RealmHelper.getKey()
+        print("key:", key.map { String(format: "%.2hhx", $0) }.joined())
         let config = Realm.Configuration(encryptionKey: key)
         realm = try! Realm(configuration: config)
     }
@@ -65,6 +66,19 @@ class RealmHelper {
         let result = realm.objects(Task.self)
         print("Realmのファイルの場所：", Realm.Configuration.defaultConfiguration.fileURL)
         return result
+    }
+
+    func loadTasks(with date: Date) -> [Task] {
+        let allTasks = loadTasks()
+        let dateString = date.convert()
+        var tasks: [Task] = []
+        for task in allTasks {
+            let taskDateString = task.createdDate.convert()
+            if taskDateString == dateString {
+                tasks.append(task)
+            }
+        }
+        return tasks
     }
 
     func addTask(task: Task) -> Bool {

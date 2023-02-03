@@ -10,6 +10,7 @@ import RealmSwift
 
 class TaskListViewModel: ObservableObject {
     @Published var taskList: [TaskModel] = []
+    @Published var selectedDate = Date()
     private let realmHelper: RealmHelper
     private var token: NotificationToken?
     private var allTasks: Results<Task>? = nil
@@ -26,7 +27,19 @@ class TaskListViewModel: ObservableObject {
             }
             self.taskList = Array(allTasksNotOptional).map {
                 TaskModel(id: $0.id, createdDate: $0.createdDate, title: $0.title, detail: $0.detail, totalNumOfPomodoro: $0.totalNumOfPomodoro, completedNumOfPomodoro: $0.completedNumOfPomodoro, numOfInterruption: $0.numOfInterruption)
+            }.filter {
+                let selectedDateString = self.selectedDate.convert()
+                let taskDateString = $0.createdDate.convert()
+                return selectedDateString == taskDateString
             }
+        }
+    }
+
+    func getTaskList(on date: Date) {
+        print("選択されたdate:", date)
+        let tasks = realmHelper.loadTasks(with: date)
+        taskList = tasks.map {
+            TaskModel(id: $0.id, createdDate: $0.createdDate, title: $0.title, detail: $0.detail, totalNumOfPomodoro: $0.totalNumOfPomodoro, completedNumOfPomodoro: $0.completedNumOfPomodoro, numOfInterruption: $0.numOfInterruption)
         }
     }
 
