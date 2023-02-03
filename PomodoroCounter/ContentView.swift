@@ -11,6 +11,7 @@ struct ContentView: View {
     @ObservedObject var viewModel = TaskListViewModel()
     @State private var isShowingAddTaskScreen = false
     @State private var isShowingResetAlert = false
+    @State private var isShowingCalendar = false
 
     var body: some View {
         NavigationView {
@@ -41,17 +42,29 @@ struct ContentView: View {
                         }
                     }
                     addButton
-                        .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 270)
+                        .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 200)
+                    if isShowingCalendar {
+                        Color.black
+                            .opacity(0.5)
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                isShowingCalendar = false
+                            }
+                        calendar
+                    }
                 }
             }
-            .navigationTitle("今日のTODOリスト")
+            .onChange(of: viewModel.selectedDate) { _ in
+                viewModel.getTaskList(on: viewModel.selectedDate)
+            }
+            .navigationTitle(dateString)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing){
                     shareButton
                 }
                 ToolbarItem(placement: .navigationBarLeading){
-                    resetButton
+                    calendarButton
                 }
             }
         }
@@ -60,6 +73,54 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+    // FIXME: 当日のタスク以外の追加は追加できないようにする
+//    var isShowingAddButton: Bool {
+//        let today = Date().convert()
+//        let selectedDate = viewModel.selectedDate.convert()
+//        if today == selectedDate {
+//            return true
+//        }
+//        return false
+//    }
+
+    var dateString: String {
+        let today = Date().convert()
+        let selectedDate = viewModel.selectedDate.convert()
+        if today == selectedDate {
+            return "今日"
+        }
+        return selectedDate
+    }
+
+    var calendar: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: {
+                    isShowingCalendar = false
+                }) {
+                    Image(systemName: "multiply.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.mainText)
+                }
+            }
+            DatePicker(
+                "",
+                selection: $viewModel.selectedDate,
+                displayedComponents: [.date]
+            )
+            .datePickerStyle(.graphical)
+            .environment(\.locale, Locale(identifier: "ja_JP"))
+            .accentColor(.green)
+        }
+        .padding()
+        .frame(width: UIScreen.main.bounds.width * 0.8)
+        .background(Color.white)
+        .cornerRadius(20)
+    }
+
     var numOfTotalPomodoro: Int {
         var result = 0
         for task in viewModel.taskList {
@@ -90,7 +151,7 @@ private extension ContentView {
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
         }
         .fullScreenCover(isPresented: $isShowingAddTaskScreen) {
-            AddTaskScreen()
+            AddTaskScreen(selectedDate: viewModel.selectedDate)
         }
     }
 
@@ -111,6 +172,15 @@ private extension ContentView {
             """
         }
         return sharedText
+    }
+
+    var calendarButton: some View {
+        Button(action: {
+            isShowingCalendar = true
+        }) {
+            Image(systemName: "calendar")
+                .foregroundColor(.mainText)
+        }
     }
 
     var resetButton: some View {

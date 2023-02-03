@@ -12,8 +12,9 @@ class AddTaskViewModel: ObservableObject {
     @Published var todoDetail = ""
     @Published var numOfTotalPomodoroString = ""
 
-    func addTask() -> Bool {
+    func addTask(selectedDate: Date) -> Bool {
         let task = Task()
+        task.createdDate = selectedDate
         task.title = todoTitle
         task.detail = todoDetail
         task.totalNumOfPomodoro = Int(numOfTotalPomodoroString) ?? 0
