@@ -11,6 +11,8 @@ struct ContentView: View {
     @ObservedObject var viewModel = TaskListViewModel()
     @State private var isShowingAddTaskScreen = false
     @State private var isShowingResetAlert = false
+    @State private var isShowingCalendar = false
+    @State private var selectedDate = Date()
 
     var body: some View {
         NavigationView {
@@ -41,17 +43,26 @@ struct ContentView: View {
                         }
                     }
                     addButton
-                        .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 270)
+                        .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 200)
+                    if isShowingCalendar {
+                        Color.black
+                            .opacity(0.5)
+                            .edgesIgnoringSafeArea(.all)
+                            .onTapGesture {
+                                isShowingCalendar = false
+                            }
+                        calendar
+                    }
                 }
             }
-            .navigationTitle("今日のTODOリスト")
+            .navigationTitle("今日のTODO")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing){
                     shareButton
                 }
                 ToolbarItem(placement: .navigationBarLeading){
-                    resetButton
+                    calendarButton
                 }
             }
         }
@@ -60,6 +71,35 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+    var calendar: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: {
+                    isShowingCalendar = false
+                }) {
+                    Image(systemName: "multiply.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.mainText)
+                }
+            }
+            DatePicker(
+                "",
+                selection: .constant(Date()),
+                displayedComponents: [.date]
+            )
+            .datePickerStyle(.graphical)
+            .environment(\.locale, Locale(identifier: "ja_JP"))
+            .accentColor(.green)
+        }
+        .padding()
+        .frame(width: UIScreen.main.bounds.width * 0.8)
+        .background(Color.white)
+        .cornerRadius(20)
+    }
+
     var numOfTotalPomodoro: Int {
         var result = 0
         for task in viewModel.taskList {
@@ -111,6 +151,15 @@ private extension ContentView {
             """
         }
         return sharedText
+    }
+
+    var calendarButton: some View {
+        Button(action: {
+            isShowingCalendar = true
+        }) {
+            Image(systemName: "calendar")
+                .foregroundColor(.mainText)
+        }
     }
 
     var resetButton: some View {
