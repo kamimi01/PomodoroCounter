@@ -73,8 +73,8 @@ struct AddTaskScreen: View {
                                 Spacer()
                             }
                         }
-                        .padding(.horizontal, 16)
                     }
+                    .padding(.horizontal, 16)
                 }
             }
             .navigationTitle("新しいTODO")
