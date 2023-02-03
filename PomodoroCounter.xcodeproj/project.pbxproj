@@ -120,6 +120,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		D4A900FE298DD59300BCCA5D /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7E42984FDEB005B863F /* TaskCardView.swift */,
+				D4CEE7D72984FAD6005B863F /* TaskListViewModel.swift */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
 		D4CEE79F29849E96005B863F = {
 			isa = PBXGroup;
 			children = (
@@ -143,13 +152,12 @@
 		D4CEE7AA29849E96005B863F /* PomodoroCounter */ = {
 			isa = PBXGroup;
 			children = (
+				D4A900FE298DD59300BCCA5D /* TaskList */,
 				D4A900F8298D22A600BCCA5D /* Extension */,
 				D4CEE7E929852F32005B863F /* AddTask */,
 				D4CEE7E62984FDF2005B863F /* TaskDetail */,
 				D4CEE7AB29849E96005B863F /* PomodoroCounterApp.swift */,
 				D4CEE7AD29849E96005B863F /* ContentView.swift */,
-				D4CEE7E42984FDEB005B863F /* TaskCardView.swift */,
-				D4CEE7D72984FAD6005B863F /* TaskListViewModel.swift */,
 				D4CEE7FA2985E38B005B863F /* RealmHelper.swift */,
 				D4CEE7F82985E172005B863F /* Task.swift */,
 				D4CEE7D92984FB1E005B863F /* TaskModel.swift */,
