@@ -66,7 +66,7 @@ struct TaskDetailScreen: View {
                             .padding(.horizontal, 5)
                         TextField("教科書の23ページまで読む", text: $todoDetail, axis: .vertical)
                             .padding()
-                            .frame(height : 110.0, alignment: .top)
+                            .frame(height : 120.0, alignment: .top)
                             .background(Color.white)
                             .cornerRadius(20)
                             .focused($isFocusedDetail)
@@ -83,7 +83,7 @@ struct TaskDetailScreen: View {
                                 TextField("10", text: $numOfTotalPomodoroString, axis: .vertical)
                                     .keyboardType(.numberPad)
                                     .padding()
-                                    .frame(width: 100, height : 60, alignment: .center)
+                                    .frame(width: 100, height : 50, alignment: .center)
                                     .background(Color.white)
                                     .cornerRadius(20)
                                     .focused($isFocusedNum)
@@ -393,6 +393,6 @@ private extension TaskDetailScreen {
 
 struct TaskDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        TaskDetailScreen(viewModel: TaskListViewModel(), task: TaskModel(id: "1", createdDate: Date(), title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする", totalNumOfPomodoro: 10, completedNumOfPomodoro: 4, numOfInterruption: 2))
+        TaskDetailScreen(viewModel: TaskListViewModel(), task: TaskModel(id: "1", createdDate: Date(), title: "要件定義をする", detail: "xxの要件を明確にし、工数の見積もりができるようにする。xxの要件を明確にし、工数の見積もりができるようにする。", totalNumOfPomodoro: 10, completedNumOfPomodoro: 4, numOfInterruption: 2))
     }
 }
