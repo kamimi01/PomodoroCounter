@@ -73,16 +73,6 @@ struct ContentView: View {
 }
 
 private extension ContentView {
-    // FIXME: 当日のタスク以外の追加は追加できないようにする
-//    var isShowingAddButton: Bool {
-//        let today = Date().convert()
-//        let selectedDate = viewModel.selectedDate.convert()
-//        if today == selectedDate {
-//            return true
-//        }
-//        return false
-//    }
-
     var dateString: String {
         let today = Date().convert()
         let selectedDate = viewModel.selectedDate.convert()
