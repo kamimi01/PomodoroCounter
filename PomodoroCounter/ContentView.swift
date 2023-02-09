@@ -85,6 +85,18 @@ private extension ContentView {
     var calendar: some View {
         VStack {
             HStack {
+                Button(action: {
+                    viewModel.selectedDate = Date()
+                }) {
+                    Text("今日")
+                        .frame(width: 80, height: 40)
+                        .foregroundColor(.mainText)
+                        .cornerRadius(20)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 24)
+                                .stroke(Color.mainText, lineWidth: 1.0)
+                        )
+                }
                 Spacer()
                 Button(action: {
                     isShowingCalendar = false
