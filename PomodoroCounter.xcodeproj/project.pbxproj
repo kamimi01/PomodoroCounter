@@ -116,6 +116,7 @@
 			children = (
 				D4A900F9298D22B900BCCA5D /* Date+Extension.swift */,
 				D4A900FB298D3B2F00BCCA5D /* String+Extension.swift */,
+				D4CEE7D52984FA78005B863F /* Color+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -161,7 +162,6 @@
 				D4CEE7FA2985E38B005B863F /* RealmHelper.swift */,
 				D4CEE7F82985E172005B863F /* Task.swift */,
 				D4CEE7D92984FB1E005B863F /* TaskModel.swift */,
-				D4CEE7D52984FA78005B863F /* Color+Extension.swift */,
 				D4CEE7AF29849E99005B863F /* Assets.xcassets */,
 				D4CEE7EC29856BCB005B863F /* confetti.json */,
 				D4CEE7DE2984FD3A005B863F /* empty_task.json */,

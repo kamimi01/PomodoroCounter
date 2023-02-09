@@ -59,7 +59,7 @@ struct TaskCardView: View {
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .frame(height: 170)
-        .background(Color.white)
+        .background(task.completedNumOfPomodoro == task.totalNumOfPomodoro ? Color.completedGray : Color.white)
         .cornerRadius(20)
     }
 }
