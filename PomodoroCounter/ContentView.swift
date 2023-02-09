@@ -73,16 +73,6 @@ struct ContentView: View {
 }
 
 private extension ContentView {
-    // FIXME: 当日のタスク以外の追加は追加できないようにする
-//    var isShowingAddButton: Bool {
-//        let today = Date().convert()
-//        let selectedDate = viewModel.selectedDate.convert()
-//        if today == selectedDate {
-//            return true
-//        }
-//        return false
-//    }
-
     var dateString: String {
         let today = Date().convert()
         let selectedDate = viewModel.selectedDate.convert()
@@ -95,6 +85,18 @@ private extension ContentView {
     var calendar: some View {
         VStack {
             HStack {
+                Button(action: {
+                    viewModel.selectedDate = Date()
+                }) {
+                    Text("今日")
+                        .frame(width: 80, height: 40)
+                        .foregroundColor(.mainText)
+                        .cornerRadius(20)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 24)
+                                .stroke(Color.mainText, lineWidth: 1.0)
+                        )
+                }
                 Spacer()
                 Button(action: {
                     isShowingCalendar = false
