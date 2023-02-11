@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "simple_pomodoro_appicon.png",
+      "filename" : "pomo-app-icon.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
