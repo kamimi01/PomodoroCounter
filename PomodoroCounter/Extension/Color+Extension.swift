@@ -13,4 +13,5 @@ extension Color {
     static let mainText = Color("main_text")
     static let placeholder = Color("placeholder")
     static let completedGray = Color("completed_gray")
+    static let timeGreen = Color("time_green")
 }
