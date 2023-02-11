@@ -300,7 +300,7 @@ private extension TaskDetailScreen {
                     Image(systemName: "checkmark.square.fill")
                         .resizable()
                         .scaledToFit()
-                        .foregroundColor(.green)
+                        .foregroundColor(.mainGreen)
                         .frame(width: 60, height: 60)
                 } else {
                     Image(systemName: "checkmark.square")
