@@ -11,52 +11,68 @@ struct TaskCardView: View {
     let task: TaskModel
 
     var body: some View {
-        HStack(alignment: .center, spacing: 0) {
-            VStack(alignment: .center, spacing: 5) {
-                HStack(alignment: .bottom, spacing: 0) {
-                    Text(String(task.completedNumOfPomodoro))
-                        .font(.system(size: 50))
-                        .bold()
-                        .frame(width: 55)
-                    Text("/ " + String(task.totalNumOfPomodoro))
-                        .font(.system(size: 20))
-                        .foregroundColor(.gray)
-                        .frame(width: 50)
-                        .padding(.bottom, 10)
-                }
-                .border(Color.red)
-                HStack(alignment: .center, spacing: 3) {
-                    Spacer()
-                    Text(totalTime(numOfPomodoro: task.completedNumOfPomodoro))
-                    HStack(spacing: 3) {
-                        Text("(")
-                        Image(systemName: "multiply")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 10, height: 10)
-                        Text(String(task.numOfInterruption))
-                        Text(")")
+        HStack(alignment: .center, spacing: 5) {
+            ZStack {
+                Color.timeGreen
+                    .frame(width: 148, height: 110)
+                    .cornerRadius(20)
+                VStack(alignment: .center, spacing: 5) {
+                    HStack(alignment: .bottom, spacing: 0) {
+                        Text(String(task.completedNumOfPomodoro))
+                            .font(.system(size: 50))
+                            .foregroundColor(.mainGreen)
+                            .bold()
+                            .frame(width: 55)
+                        Text("/ " + String(task.totalNumOfPomodoro))
+                            .font(.system(size: 20))
+                            .foregroundColor(.gray)
+                            .frame(width: 50)
+                            .padding(.bottom, 10)
                     }
-                    .font(.system(size: 14))
-                    Spacer()
+                    HStack(alignment: .center, spacing: 3) {
+                        Spacer()
+                        Text(totalTime(numOfPomodoro: task.completedNumOfPomodoro))
+                        HStack(spacing: 3) {
+                            Text("(")
+                            Image(systemName: "multiply")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 8, height: 8)
+                            Text(String(task.numOfInterruption))
+                            Text(")")
+                        }
+                        .font(.system(size: 13))
+                        Spacer()
+                    }
+                    .foregroundColor(.gray)
                 }
-                .foregroundColor(.gray)
+                .frame(width: 150)
             }
-            .frame(width: 155)
-            .border(Color.red)
-            Text(task.title)
-                .font(.system(size: 24))
-                .foregroundColor(.mainText)
-                .lineLimit(3)
-                .multilineTextAlignment(.leading)
-                .frame(maxHeight: .infinity)
-                .frame(maxWidth: .infinity)
+            if task.totalNumOfPomodoro == task.completedNumOfPomodoro {
+                Text(task.title)
+                    .font(.system(size: 24))
+                    .foregroundColor(.mainText)
+                    .strikethrough()
+                    .lineLimit(3)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxHeight: .infinity)
+                    .frame(maxWidth: .infinity)
+            } else {
+                Text(task.title)
+                    .font(.system(size: 24))
+                    .foregroundColor(.mainText)
+                    .lineLimit(3)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxHeight: .infinity)
+                    .frame(maxWidth: .infinity)
+            }
         }
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .frame(height: 140)
+        .frame(height: 133)
         .background(task.completedNumOfPomodoro == task.totalNumOfPomodoro ? Color.completedGray : Color.white)
         .cornerRadius(20)
+        .shadow(color: .gray, radius: 3, x: 3, y: 3)
     }
 }
 
@@ -65,6 +81,9 @@ private extension TaskCardView {
         let totalMinutes = numOfPomodoro * 30
         let hours = totalMinutes / 60
         let minutes = totalMinutes - hours * 60
+        if hours == 0 {
+            return "\(minutes)分"
+        }
         if minutes == 0 {
             return "\(hours)時間"
         }
