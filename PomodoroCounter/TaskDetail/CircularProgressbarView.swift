@@ -16,9 +16,9 @@ struct CircularProgressbarView: View {
             // 背景の円
             Circle()
             // ボーダーラインを描画するように指定
-                .stroke(lineWidth: 15.0)
+                .stroke(lineWidth: 12.0)
                 .opacity(0.3)
-                .foregroundColor(.green)
+                .foregroundColor(.mainGreen)
 
             // 進捗を示す円
             Circle()
@@ -26,18 +26,18 @@ struct CircularProgressbarView: View {
             // 始点/終点には0.0-1.0の範囲に正規化した値を指定する
                 .trim(from: 0.0, to: min(CGFloat(Double(numOfCompletedPomodoro) / Double(numOfTotalPomodoro)), 1.0))
             // 線の端の形状などを指定
-                .stroke(style: StrokeStyle(lineWidth: 15, lineCap: .round, lineJoin: .round))
-                .foregroundColor(.green)
+                .stroke(style: StrokeStyle(lineWidth: 12, lineCap: .round, lineJoin: .round))
+                .foregroundColor(.mainGreen)
             // デフォルトの原点は時計の12時の位置ではないので回転させる
                 .rotationEffect(Angle(degrees: 270.0))
 
             // 進捗率のテキスト
             HStack {
                 Text(String(numOfCompletedPomodoro))
-                    .foregroundColor(.green)
+                    .foregroundColor(.mainGreen)
                     .font(.largeTitle)
                     .bold()
-                Text("/\(numOfTotalPomodoro)")
+                Text("/ \(numOfTotalPomodoro)")
                     .font(.title2)
                     .foregroundColor(.gray)
             }

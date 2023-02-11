@@ -115,7 +115,7 @@ private extension ContentView {
             )
             .datePickerStyle(.graphical)
             .environment(\.locale, Locale(identifier: "ja_JP"))
-            .accentColor(.green)
+            .accentColor(.mainGreen)
         }
         .padding()
         .frame(width: UIScreen.main.bounds.width * 0.8)
@@ -147,7 +147,7 @@ private extension ContentView {
                 .font(.title)
                 .frame(width: 90, height: 90)
                 .imageScale(.large)
-                .background(Color.green)
+                .background(Color.mainGreen)
                 .foregroundColor(.white)
                 .clipShape(Circle())
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
