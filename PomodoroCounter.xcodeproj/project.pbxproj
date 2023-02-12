@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D49733B729987AB200FA6272 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49733B629987AB200FA6272 /* SettingScreen.swift */; };
 		D49733D72998850100FA6272 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = D49733D62998850100FA6272 /* license-list.plist */; };
-		D49733FC2998BB8300FA6272 /* AppInfoList in Frameworks */ = {isa = PBXBuildFile; productRef = D49733FB2998BB8300FA6272 /* AppInfoList */; };
+		D49734052998BCBA00FA6272 /* AppInfoList in Frameworks */ = {isa = PBXBuildFile; productRef = D49734042998BCBA00FA6272 /* AppInfoList */; };
 		D4A900F5298B1CE600BCCA5D /* CircularProgressbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A900F4298B1CE600BCCA5D /* CircularProgressbarView.swift */; };
 		D4A900FA298D22B900BCCA5D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A900F9298D22B900BCCA5D /* Date+Extension.swift */; };
 		D4A900FC298D3B2F00BCCA5D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A900FB298D3B2F00BCCA5D /* String+Extension.swift */; };
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D49733FC2998BB8300FA6272 /* AppInfoList in Frameworks */,
+				D49734052998BCBA00FA6272 /* AppInfoList in Frameworks */,
 				D4CEE7F72985E0DC005B863F /* RealmSwift in Frameworks */,
 				D4CEE7F52985E0DC005B863F /* Realm in Frameworks */,
 				D4CEE7DD2984FD19005B863F /* Lottie in Frameworks */,
@@ -253,7 +253,7 @@
 				D4CEE7DC2984FD19005B863F /* Lottie */,
 				D4CEE7F42985E0DC005B863F /* Realm */,
 				D4CEE7F62985E0DC005B863F /* RealmSwift */,
-				D49733FB2998BB8300FA6272 /* AppInfoList */,
+				D49734042998BCBA00FA6272 /* AppInfoList */,
 			);
 			productName = PomodoroCounter;
 			productReference = D4CEE7A829849E96005B863F /* PomodoroCounter.app */;
@@ -330,7 +330,7 @@
 			packageReferences = (
 				D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				D4CEE7F32985E0DC005B863F /* XCRemoteSwiftPackageReference "realm-swift" */,
-				D49733FA2998BB8300FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */,
+				D49734032998BCBA00FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */,
 			);
 			productRefGroup = D4CEE7A929849E96005B863F /* Products */;
 			projectDirPath = "";
@@ -746,7 +746,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D49733FA2998BB8300FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */ = {
+		D49734032998BCBA00FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kamimi01/AppInfoList.git";
 			requirement = {
@@ -773,9 +773,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D49733FB2998BB8300FA6272 /* AppInfoList */ = {
+		D49734042998BCBA00FA6272 /* AppInfoList */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D49733FA2998BB8300FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */;
+			package = D49734032998BCBA00FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */;
 			productName = AppInfoList;
 		};
 		D4CEE7DC2984FD19005B863F /* Lottie */ = {
