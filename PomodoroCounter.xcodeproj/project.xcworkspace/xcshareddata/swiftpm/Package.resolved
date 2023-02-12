@@ -1,6 +1,24 @@
 {
   "pins" : [
     {
+      "identity" : "appinfolist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kamimi01/AppInfoList.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "e133865f69231c2c4a2a0d6b3425fb5d8ccee778"
+      }
+    },
+    {
+      "identity" : "licenselist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cybozu/LicenseList.git",
+      "state" : {
+        "revision" : "98ed6ad04e0038acb710863d54d66147f2409ec3",
+        "version" : "0.2.0"
+      }
+    },
+    {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios",

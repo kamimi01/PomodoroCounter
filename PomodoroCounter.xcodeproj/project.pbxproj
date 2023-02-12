@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D49733B729987AB200FA6272 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49733B629987AB200FA6272 /* SettingScreen.swift */; };
+		D49733D72998850100FA6272 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = D49733D62998850100FA6272 /* license-list.plist */; };
+		D49733F92998B5E700FA6272 /* AppInfoList in Frameworks */ = {isa = PBXBuildFile; productRef = D49733F82998B5E700FA6272 /* AppInfoList */; };
 		D4A900F5298B1CE600BCCA5D /* CircularProgressbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A900F4298B1CE600BCCA5D /* CircularProgressbarView.swift */; };
 		D4A900FA298D22B900BCCA5D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A900F9298D22B900BCCA5D /* Date+Extension.swift */; };
 		D4A900FC298D3B2F00BCCA5D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A900FB298D3B2F00BCCA5D /* String+Extension.swift */; };
@@ -54,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D49733B629987AB200FA6272 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
+		D49733D62998850100FA6272 /* license-list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
 		D4A900F4298B1CE600BCCA5D /* CircularProgressbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressbarView.swift; sourceTree = "<group>"; };
 		D4A900F9298D22B900BCCA5D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D4A900FB298D3B2F00BCCA5D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49733F92998B5E700FA6272 /* AppInfoList in Frameworks */,
 				D4CEE7F72985E0DC005B863F /* RealmSwift in Frameworks */,
 				D4CEE7F52985E0DC005B863F /* Realm in Frameworks */,
 				D4CEE7DD2984FD19005B863F /* Lottie in Frameworks */,
@@ -111,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D49733F42998AFBC00FA6272 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D49733B629987AB200FA6272 /* SettingScreen.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		D4A900F8298D22A600BCCA5D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +147,7 @@
 		D4CEE79F29849E96005B863F = {
 			isa = PBXGroup;
 			children = (
+				D49733D62998850100FA6272 /* license-list.plist */,
 				D4CEE7AA29849E96005B863F /* PomodoroCounter */,
 				D4CEE7BB29849E9A005B863F /* PomodoroCounterTests */,
 				D4CEE7C529849E9A005B863F /* PomodoroCounterUITests */,
@@ -153,6 +168,7 @@
 		D4CEE7AA29849E96005B863F /* PomodoroCounter */ = {
 			isa = PBXGroup;
 			children = (
+				D49733F42998AFBC00FA6272 /* Setting */,
 				D4A900FE298DD59300BCCA5D /* TaskList */,
 				D4A900F8298D22A600BCCA5D /* Extension */,
 				D4CEE7E929852F32005B863F /* AddTask */,
@@ -226,6 +242,7 @@
 				D4CEE7A429849E96005B863F /* Sources */,
 				D4CEE7A529849E96005B863F /* Frameworks */,
 				D4CEE7A629849E96005B863F /* Resources */,
+				D49733D82998850C00FA6272 /* LicenseList */,
 			);
 			buildRules = (
 			);
@@ -236,6 +253,7 @@
 				D4CEE7DC2984FD19005B863F /* Lottie */,
 				D4CEE7F42985E0DC005B863F /* Realm */,
 				D4CEE7F62985E0DC005B863F /* RealmSwift */,
+				D49733F82998B5E700FA6272 /* AppInfoList */,
 			);
 			productName = PomodoroCounter;
 			productReference = D4CEE7A829849E96005B863F /* PomodoroCounter.app */;
@@ -312,6 +330,7 @@
 			packageReferences = (
 				D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				D4CEE7F32985E0DC005B863F /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D49733F72998B5E700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */,
 			);
 			productRefGroup = D4CEE7A929849E96005B863F /* Products */;
 			projectDirPath = "";
@@ -329,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49733D72998850100FA6272 /* license-list.plist in Resources */,
 				D4CEE7B329849E99005B863F /* Preview Assets.xcassets in Resources */,
 				D4CEE7ED29856BCC005B863F /* confetti.json in Resources */,
 				D4CEE7B029849E99005B863F /* Assets.xcassets in Resources */,
@@ -352,6 +372,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D49733D82998850C00FA6272 /* LicenseList */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LicenseList;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SOURCE_PACKAGES_PATH=`echo ${BUILD_DIR%Build/*}SourcePackages`\n\n# Build SourcePackagesParser\nxcrun --sdk macosx swift build -c release \\\n  --package-path ${SOURCE_PACKAGES_PATH}/checkouts/LicenseList \\\n  --product spp\n\n# Run SourcePackagesParser\n${SOURCE_PACKAGES_PATH}/checkouts/LicenseList/.build/release/spp ${SRCROOT} ${SOURCE_PACKAGES_PATH}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D4CEE7A429849E96005B863F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -369,6 +410,7 @@
 				D4CEE7D62984FA78005B863F /* Color+Extension.swift in Sources */,
 				D4A900F5298B1CE600BCCA5D /* CircularProgressbarView.swift in Sources */,
 				D4CEE7F92985E173005B863F /* Task.swift in Sources */,
+				D49733B729987AB200FA6272 /* SettingScreen.swift in Sources */,
 				D4CEE7E52984FDEB005B863F /* TaskCardView.swift in Sources */,
 				D4CEE7AC29849E96005B863F /* PomodoroCounterApp.swift in Sources */,
 				D4CEE7FB2985E38B005B863F /* RealmHelper.swift in Sources */,
@@ -704,6 +746,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D49733F72998B5E700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kamimi01/AppInfoList.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -723,6 +773,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D49733F82998B5E700FA6272 /* AppInfoList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D49733F72998B5E700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */;
+			productName = AppInfoList;
+		};
 		D4CEE7DC2984FD19005B863F /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D4CEE7DB2984FD19005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */;

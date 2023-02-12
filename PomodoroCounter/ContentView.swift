@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var isShowingAddTaskScreen = false
     @State private var isShowingResetAlert = false
     @State private var isShowingCalendar = false
+    @State private var isShowingSetting = false
 
     var body: some View {
         NavigationView {
@@ -62,6 +63,9 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing){
                     shareButton
+                }
+                ToolbarItem(placement: .navigationBarTrailing){
+                    settingButton
                 }
                 ToolbarItem(placement: .navigationBarLeading){
                     calendarButton
@@ -161,6 +165,18 @@ private extension ContentView {
         ShareLink(item: createDailyReport()) {
             Image(systemName: "square.and.arrow.up")
                 .foregroundColor(.mainText)
+        }
+    }
+
+    var settingButton: some View {
+        Button(action: {
+            isShowingSetting = true
+        }) {
+            Image(systemName: "gearshape")
+                .foregroundColor(.mainText)
+        }
+        .fullScreenCover(isPresented: $isShowingSetting) {
+            SettingScreen()
         }
     }
 
